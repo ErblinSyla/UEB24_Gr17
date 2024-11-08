@@ -31,8 +31,12 @@ body {
 .col-12 {width: 100%;}
 
 nav {
-    background-color: red;
+    background: linear-gradient(45deg, #4CC9FE, #0D92F4);
     display: flex;
+}
+
+.title h2 {
+    margin-left: 50px;
 }
 
 .links {
@@ -53,14 +57,14 @@ nav {
 
 .title-main {
     text-align: center;
-    margin-bottom: 60px;
+    margin: 60px 0;
 }
 
 /* ADMISSIONS */
 
 .main-section {
     min-height: 92vh;
-    background-color: blue;
+    background-color: #FEF9F2;
 }
 
 .wallpaper {
@@ -79,6 +83,11 @@ nav {
     border-right: 3px solid black;
     text-align: right;
     padding-right: 20px;
+    line-height: 2;
+}
+
+.wall-text h1 {
+    font-size: 28px;
 }
 
 .wall-button {
@@ -86,7 +95,21 @@ nav {
     padding-left: 20px;
 }
 
+.wall-button p {
+    font-size: 18px;
+}
+
+.wall-button button {
+    padding: 7px 17px;
+    border-radius: 4px;
+}
+
 /* WHY JOIN US */
+
+.why-join-us {
+    background-color: #FFF1DB;
+    padding-bottom: 80px;
+}
 
 .join-col {
     text-align: center;
@@ -109,11 +132,33 @@ nav {
     height: 60px;
 }
 
+/* ENROLLING PROCESS */
+
+.enroll {
+    padding-bottom: 80px;
+}
+
+.enroll img {
+    width: 300px;
+    box-shadow: 1px 1px 7px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+}
+
+.enroll ul li {
+    font-size: 22px;
+    line-height: 3.5;
+}
+
+.enroll ul li a {
+    text-decoration: none;
+}
+
 /* FOOTER */
 
 footer {
-    background-color: red;
+    background: linear-gradient(45deg, #4CC9FE, #0D92F4);
     text-align: center;
     font-size: 15px;
-    font-style: italic;
 }
