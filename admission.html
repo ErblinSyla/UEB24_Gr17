@@ -8,21 +8,24 @@
     </head>
     <body>
         <nav>
-            <div class="row">
+            <div class="row mobile-row">
                 <div class="col-4 title">
                     <h2>AlgoVerse Academy</h2>
                 </div>
                 <div class="col-8">
-                    <ul class="links">
+                    <ul class="links" id="nav-links">
                         <li><a href="#">Homepage</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Our Courses</a></li>
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
+                    <div class="hamburger" id="hamburger">
+                        <p>&#9776;</p>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </nav>        
         <section class="main-section">
             <div class="wallpaper">
                 <div class="wallpaper-text">
@@ -99,5 +102,13 @@
                 </div>
             </div>
         </footer>
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+        
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        </script>
     </body>
 </html>
