@@ -35,7 +35,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 2px 20px;
 }
 
 .navbar-container {
@@ -141,11 +141,12 @@ ul {
 /* ADMISSIONS */
 
 .main-section {
-    min-height: 92vh;
-    background-color: #FEF9F2;
+    min-height: 100vh;
 }
 
 .wallpaper {
+    background: url(images/admissions-wallpaper.jpg);
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +159,8 @@ ul {
 }
 
 .wall-text {
-    border-right: 3px solid black;
+    border-right: 3px solid darkblue;
+    box-shadow: 1px 1px 5px;
     text-align: right;
     padding-right: 20px;
     line-height: 2;
@@ -166,6 +168,7 @@ ul {
 
 .wall-text h1 {
     font-size: 28px;
+    color: whitesmoke;
 }
 
 .wall-button {
@@ -175,6 +178,8 @@ ul {
 
 .wall-button p {
     font-size: 18px;
+    color: #0D92F4;
+    font-weight: bold;
 }
 
 .wall-button button {
