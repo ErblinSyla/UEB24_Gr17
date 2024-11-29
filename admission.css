@@ -67,6 +67,11 @@ ul {
 .links li a {
     text-decoration: none;
     color: black;
+    transition: 0.3s ease color;
+}
+
+.links li a:hover {
+    color: blue;
 }
 
 .title-main {
@@ -104,11 +109,17 @@ ul {
         max-width: 16.6667%;
     }
 
+    .col-3, .col-4, .col-5, .col-6 {
+        display: block;
+        margin: auto;
+        width: 60%;
+    }
+
     .links {
         flex-direction: column;
         gap: 20px;
         position: absolute;
-        top: 66px;
+        top: 50px;
         right: -45px;
         border-bottom-left-radius: 8px;
         background: linear-gradient(45deg, #4CC9FE, #0D92F4);
@@ -135,6 +146,38 @@ ul {
 
     .hamburger p {
         margin: 10px 0;
+    }
+
+    .enroll img.enroll-img {
+        display: block;
+        margin: auto;
+    }
+
+    .enroll ul.ul-list {
+        display: block;
+        margin: auto;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 810px) {
+    .col-3, .col-4, .col-5, .col-6 {
+        display: block;
+        margin: auto;
+        width: 86%;
+    }
+
+    .enroll ul.ul-list {
+        display: block;
+        margin: auto;
+        margin-top: 50px;
+        width: 200px;
+    }
+
+    ul.ul-list .list {
+        line-height: 2.2;
+        font-size: 18px;
+        width: 400px;
     }
 }
 
@@ -182,9 +225,18 @@ ul {
     font-weight: bold;
 }
 
-.wall-button button {
-    padding: 7px 17px;
+.wall-button a {
+    padding: 9px 17px;
+    color: darkblue;
     border-radius: 4px;
+    text-decoration: none;
+    border: 2px solid black;
+    background-color: #0D92F4;
+    transition: 0.3s ease background-color;
+}
+
+.wall-button a:hover {
+    background-color: #4CC9FE;
 }
 
 /* WHY JOIN US */
@@ -227,6 +279,11 @@ ul {
     border-radius: 50%;
     display: block;
     margin: auto;
+    margin-left: 350px;
+}
+
+.enroll ul {
+    margin-right: 200px;
 }
 
 .enroll ul li {
@@ -236,6 +293,13 @@ ul {
 
 .enroll ul li a {
     text-decoration: none;
+}
+
+/* PAYMENT */
+
+.payment {
+    background-color: #FFF1DB;
+    padding-bottom: 80px;
 }
 
 /* FOOTER */
