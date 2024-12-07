@@ -302,6 +302,39 @@ ul {
     padding-bottom: 80px;
 }
 
+.payment-col {
+    text-align: center;
+}
+
+.payment-col p {
+    font-size: 21px;
+}
+
+.pay-img {
+    width: 320px;
+    height: 240px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    box-shadow: 1px 1px 7px;
+}
+
+.payment-col button {
+    padding: 9px 17px;
+    color: darkblue;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 2px solid black;
+    background-color: #0D92F4;
+    transition: 0.3s ease background-color;
+    margin-top: 25px;
+}
+
+.payment-col button:hover {
+    cursor: pointer;
+    background-color: #4CC9FE;
+}
+
 /* FOOTER */
 
 footer {
