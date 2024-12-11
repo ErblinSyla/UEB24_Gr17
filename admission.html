@@ -5,6 +5,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admissions - AlgoVerse Academy</title>
         <link rel="stylesheet" href="admission.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Changa:wght@200..800&family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <script src="javascript.js"></script>
+        <script>
+            window.addEventListener('scroll', reveal);
+        </script>
+        <style>
+            .pay-img:hover {
+                box-shadow: 1px 1px 7px #0D92F4;
+            }
+
+            .enroll img:hover {
+                box-shadow: 1px 1px 7px #0D92F4;
+            }
+
+            .join-img:hover {
+                box-shadow: 1px 1px 7px #0D92F4;
+            }
+            nav .title h2 {
+                font-family: "Spicy Rice", serif;
+            }
+            .title-main {
+                font-family: "Changa", sans-serif;
+                font-size: 29px;
+                text-shadow: 1px 1px 4px;
+            }
+            nav ul li a {
+                font-family: "Cinzel", serif;
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <nav>
@@ -26,64 +68,64 @@
                 </div>
             </div>
         </nav>        
-        <section class="main-section">
-            <div class="wallpaper">
+        <main class="main-section">
+            <section class="wallpaper">
                 <div class="wallpaper-text">
                     <div class="row">
                         <div class="col-6 wall-text">
                             <h1>Discover how to join our academy and start learning programming with expert instructors.</h1>
                         </div>
                         <div class="col-5 wall-button">
-                            <p><i>Best choice you can make!</i></p>
+                            <p style="font-family: 'MyFontItalic', Arial, Helvetica, sans-serif;">Best choice you can make!</p>
                             <a href="courses.html"><b>Enroll Now</b></a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="why-join-us">
+            </section>
+            <section class="why-join-us">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 reveal">
                         <h2 class="title-main">Why Join Us?</h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4 reveal">
                         <div class="join-col">
                             <div class="join-text">
                                 <p>Access to industry-expert instructors</p>
                             </div>
-                            <img class="join-img" src="images/instructors.jpg">
+                            <img class="join-img" src="images/instructors.jpg" alt="instructors">
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 reveal">
                         <div class="join-col">
                             <div class="join-text">
                                 <p>Hands-on projects for real-world coding experience.</p>
                             </div>
-                            <img class="join-img" src="images/coding.jpg">
+                            <img class="join-img" src="images/coding.jpg" alt="coding">
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 reveal">
                         <div class="join-col">
                             <div class="join-text">
                                 <p>Career support, networking, or certification opportunities.</p>
                             </div>
-                            <img class="join-img" src="images/certification.avif">
+                            <img class="join-img" src="images/certification.avif" alt="certification">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="enroll">
+            </section>
+            <section class="enroll">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 reveal">
                         <h2 class="title-main">Enrollment Process</h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 reveal">
                         <img class="enroll-img" src="images/enroll.png">
                     </div>
-                    <div class="col-7">
+                    <div class="col-7 reveal">
                         <ul class="ul-list" style="list-style-type: disc;">
                             <li class="list">Select the desired <a href="#" target="_blank">course</a> you wish to follow,</li>
                             <li class="list">Fill out the form with all your details,</li>
@@ -91,53 +133,60 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="payment">
+            </section>
+            <section class="payment">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 reveal">
                         <h2 class="title-main">Payment Options</h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-3 reveal">
                         <div class="payment-col">
                             <div class="join-text">
                                 <p>Credit Card</p>
                             </div>
-                            <img class="pay-img" src="images/credit-cards.png">
+                            <img class="pay-img" src="images/credit-cards.png" alt="credit-cards">
                             <button>See More</button>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 reveal">
                         <div class="payment-col">
                             <div class="join-text">
                                 <p>Digital Wallets</p>
                             </div>
-                            <img class="pay-img" src="images/digital-wallets.jpg">
+                            <img class="pay-img" src="images/digital-wallets.jpg" alt="digital-wallets">
                             <button>See More</button>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 reveal">
                         <div class="payment-col">
                             <div class="join-text">
                                 <p>Cash-On Delivery</p>
                             </div>
-                            <img class="pay-img" src="images/cash-on.webp">
+                            <img class="pay-img" src="images/cash-on.webp" alt="cash-on">
                             <button>See More</button>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 reveal">
                         <div class="payment-col">
                             <div class="join-text">
                                 <p>Bank Transfers</p>
                             </div>
-                            <img class="pay-img" src="images/bank-transfer.png">
+                            <img class="pay-img" src="images/bank-transfer.png" alt="bank-transfer">
                             <button>See More</button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section class="faq">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title-main">Frequently Asked Questions</h2>
+                    </div>
+                </div>
+            </section>
+        </main>
         <footer>
             <div class="row">
                 <div class="col-12">

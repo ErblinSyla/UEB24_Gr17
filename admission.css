@@ -207,6 +207,13 @@ ul {
     text-align: right;
     padding-right: 20px;
     line-height: 2;
+    position: relative;
+    transform: translateX(-80px);
+    animation: float-up 2s ease-out forwards;
+    opacity: 1;
+    transition: all 2s ease;
+    font-family: "Changa", sans-serif;
+    font-style: italic;
 }
 
 .wall-text h1 {
@@ -217,12 +224,17 @@ ul {
 .wall-button {
     text-align: left;
     padding-left: 20px;
+    position: relative;
+    transform: translateX(80px);
+    animation: float-up 2s ease-out forwards;
+    opacity: 1;
+    transition: all 2s ease;
 }
 
 .wall-button p {
     font-size: 18px;
     color: #0D92F4;
-    font-weight: bold;
+    
 }
 
 .wall-button a {
@@ -254,12 +266,14 @@ ul {
 .join-col p {
     text-align: center;
     font-size: 21px;
+    font-family: 'MyFont', Arial, Helvetica, sans-serif;
 }
 
 .join-img {
     width: 80%;
     border-radius: 10px;
     height: 250px;
+    transition: 0.3s ease box-shadow;
     box-shadow: 1px 1px 7px;
 }
 
@@ -279,6 +293,7 @@ ul {
     border-radius: 50%;
     display: block;
     margin: auto;
+    transition: 0.3s ease box-shadow;
     margin-left: 350px;
 }
 
@@ -289,6 +304,7 @@ ul {
 .enroll ul li {
     font-size: 22px;
     line-height: 3.5;
+    font-family: 'MyFont', Arial, Helvetica, sans-serif;
 }
 
 .enroll ul li a {
@@ -308,6 +324,7 @@ ul {
 
 .payment-col p {
     font-size: 21px;
+    font-family: 'MyFont', Arial, Helvetica, sans-serif;
 }
 
 .pay-img {
@@ -317,6 +334,7 @@ ul {
     display: block;
     margin: auto;
     box-shadow: 1px 1px 7px;
+    transition: 0.3s ease box-shadow;
 }
 
 .payment-col button {
@@ -341,4 +359,33 @@ footer {
     background: linear-gradient(45deg, #4CC9FE, #0D92F4);
     text-align: center;
     font-size: 15px;
+}
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+    z-index: 1;
+}
+
+@keyframes float-up {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+@font-face {
+    font-family: 'MyFont';
+    src: url(fonts/Rubik/Rubik-VariableFont_wght.ttf); 
+}
+
+@font-face {
+    font-family: 'MyFontItalic';
+    src: url(fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf); 
 }
