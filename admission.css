@@ -353,6 +353,58 @@ ul {
     background-color: #4CC9FE;
 }
 
+/* FAQ */
+
+.rating {
+    display: flex;
+    cursor: pointer;
+    font-size: 2rem;
+}
+  
+.rating span {
+    color: gold;
+}
+  
+.rating span.hover {
+    color: darkgoldenrod;
+}
+
+.rating span.selected {
+    color: gold;
+}
+
+.rating span.half::before {
+    content: '\2605';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: gold;
+}
+
+.rating span.half {
+    position: relative;
+    color: #ccc;
+}
+
+.rating span.hover,
+.rating span.selected:hover {
+    color: darkgoldenrod;
+}
+
+.rating span.half:hover::before {
+    color: darkgoldenrod;
+}
+
+.rating span.fifth-star {
+    color: #ccc;
+}
+
+.rating span.fifth-star:hover {
+    color: darkgoldenrod;
+}
+
 /* FOOTER */
 
 footer {

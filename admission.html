@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admissions - AlgoVerse Academy</title>
@@ -185,6 +186,59 @@
                         <h2 class="title-main">Frequently Asked Questions</h2>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="faq">
+                            <div class="col-4">
+                                <img>
+                            </div>
+                            <div class="col-8">
+                                <div class="rating">
+                                    <span data-value="1">&#9733;</span>
+                                    <span data-value="2">&#9733;</span>
+                                    <span data-value="3">&#9733;</span>
+                                    <span data-value="4">&#9733;</span>
+                                    <span data-value="5">&#9733;</span>
+                                </div>
+                                <p>Hello</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="faq">
+                            <div class="col-4">
+                                <img>
+                            </div>
+                            <div class="col-8">
+                                <div class="rating">
+                                    <span data-value="1">&#9733;</span>
+                                    <span data-value="2">&#9733;</span>
+                                    <span data-value="3">&#9733;</span>
+                                    <span data-value="4">&#9733;</span>
+                                    <span data-value="5" class="fifth-star">&#9733;</span>
+                                </div>
+                                <p>Hello</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="faq">
+                            <div class="col-4">
+                                <img>
+                            </div>
+                            <div class="col-8">
+                                <div class="rating">
+                                    <span data-value="1" class="selected">&#9733;</span>
+                                    <span data-value="2" class="selected">&#9733;</span>
+                                    <span data-value="3" class="selected">&#9733;</span>
+                                    <span data-value="4" class="selected">&#9733;</span>
+                                    <span data-value="5" class="half">&#9733;</span>
+                                </div>
+                                <p>Hello</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
         <footer>
@@ -201,6 +255,41 @@
             hamburger.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
             });
+
+
+            $(document).ready(function () {
+    $('.rating span').on('mouseover', function () {
+        const value = $(this).data('value');
+        const isHalf = $(this).hasClass('half');
+        $(this).siblings().addBack().each(function () {
+            const starValue = $(this).data('value');
+            if (isHalf && starValue === value) {
+                $(this).addClass('hover');
+                return false;
+            }
+            $(this).toggleClass('hover', starValue <= value);
+        });
+    });
+
+    $('.rating span').on('mouseout', function () {
+        $(this).siblings().addBack().removeClass('hover');
+    });
+
+    $('.rating span').on('click', function () {
+        const value = $(this).data('value');
+        const parent = $(this).parent();
+        parent.find('span').each(function () {
+            const starValue = $(this).data('value');
+            if ($(this).hasClass('half') && starValue === value) {
+                $(this).addClass('selected');
+                return false;
+            }
+            $(this).toggleClass('selected', starValue <= value);
+        });
+    });
+});
+
+
         </script>
     </body>
 </html>
