@@ -405,6 +405,26 @@ ul {
     color: darkgoldenrod;
 }
 
+.faq-img {
+    border-radius: 50%;
+    max-width: 80px;
+}
+
+.faq-div {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    min-height: 150px;
+    box-shadow: 1px 1px 7px;
+    transition: 0.3s ease box-shadow;
+}
+
+.faq-div .col-9 p {
+    margin-left: 12px;
+    text-align: justify;
+    line-height: 1.2;
+}
+
 /* FOOTER */
 
 footer {
