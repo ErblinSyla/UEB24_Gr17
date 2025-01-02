@@ -311,10 +311,59 @@ ul {
     text-decoration: none;
 }
 
+/* PRICING PLANS */
+
+.pricing-plans {
+    background-color: #FFF1DB;
+    padding-bottom: 80px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'MyFont', Arial, Helvetica, sans-serif;
+    box-shadow: 1px 1px 7px;
+    transition: 0.3s ease box-shadow;
+}
+
+thead tr {
+    background-color: #4CC9FE;
+    color: white;
+    transition: 0.3s ease background-color;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #FDFAD9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+    transition: 0.3s ease background-color;
+}
+
+tbody tr:hover {
+    background-color: #C5D3E8;
+}
+
+th {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 16px;
+}
+
 /* PAYMENT */
 
 .payment {
-    background-color: #FFF1DB;
     padding-bottom: 80px;
 }
 
@@ -356,6 +405,7 @@ ul {
 /* REVIEWS */
 
 .reviews {
+    background-color: #FFF1DB;
     padding-bottom: 80px;
 }
 
@@ -506,7 +556,6 @@ ul {
 /* FAQ */
 
 .faq {
-    background-color: #FFF1DB;
     padding-bottom: 80px;
 }
 
