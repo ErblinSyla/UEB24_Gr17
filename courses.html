@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Courses - AlgoVerse Academy</title>
+        <link rel="stylesheet" href="courses.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Changa:wght@200..800&family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <script src="javascript.js"></script>
+        <script>
+            window.addEventListener('scroll', reveal);
+            window.addEventListener('scroll', revealLeft);
+            window.addEventListener('scroll', revealRight);
+        </script>
+        <style>
+            nav .title h2 {
+                font-family: "Spicy Rice", serif;
+            }
+
+            .title-main {
+                font-family: "Changa", sans-serif;
+                font-size: 29px;
+                text-shadow: 1px 1px 4px;
+            }
+
+            nav ul li a {
+                font-family: "Cinzel", serif;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="row mobile-row">
+                <div class="col-4 title">
+                    <h2>AlgoVerse Academy</h2>
+                </div>
+                <div class="col-8">
+                    <ul class="links" id="nav-links">
+                        <li><a href="homepage.html">Homepage</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="courses.html">Our Courses</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <div class="hamburger" id="hamburger">
+                        <p>&#9776;</p>
+                    </div>
+                </div>
+            </div>
+        </nav>        
+        <main class="main-section">
+            <section class="wallpaper">
+                <div class="wallpaper-text">
+                    <div class="row">
+                        <div class="col-12 wall-text">
+                            <h1>We have a variety of courses you can choose</h1>
+                            <h4>All you need is a laptop with an internet connection, and the commitment to learn!</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="all-courses">
+                <div class="front-end">
+                    <div class="row">
+                        <div class="col-12 reveal">
+                            <h2 class="title-main">Front-End Course</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-4 reveal">
+                            <h2>IMG</h2>
+                        </div>
+                        <div class="col-6 reveal">
+                            <h2>Text</h2>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+                <div class="back-end">
+                    <div class="row">
+                        <div class="col-12 reveal">
+                            <h2 class="title-main">Back-End Course</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-4 reveal">
+                            <h2>IMG</h2>
+                        </div>
+                        <div class="col-6 reveal">
+                            <h2>Text</h2>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+                <div class="full-stack">
+                    <div class="row">
+                        <div class="col-12 reveal">
+                            <h2 class="title-main">Full-Stack Course</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-4 reveal">
+                            <h2>IMG</h2>
+                        </div>
+                        <div class="col-6 reveal">
+                            <h2>Text</h2>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+                <div class="mobile">
+                    <div class="row">
+                        <div class="col-12 reveal">
+                            <h2 class="title-main">Mobile Development Course</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-4 reveal">
+                            <h2>IMG</h2>
+                        </div>
+                        <div class="col-6 reveal">
+                            <h2>Text</h2>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+                <div class="game">
+                    <div class="row">
+                        <div class="col-12 reveal">
+                            <h2 class="title-main">Game Development Course</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-4 reveal">
+                            <h2>IMG</h2>
+                        </div>
+                        <div class="col-6 reveal">
+                            <h2>Text</h2>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; <span id="year">2024</span> <em>AlgoVerse Academy. All rights reserved.</em></p>
+                </div>
+            </div>
+        </footer>
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+        
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+          </script>
+    </body>
+</html>
