@@ -22,6 +22,8 @@
         <script src="javascript.js"></script>
         <script>
             window.addEventListener('scroll', reveal);
+            window.addEventListener('scroll', revealLeft);
+            window.addEventListener('scroll', revealRight);
         </script>
         <style>
             .pay-img:hover {
@@ -51,11 +53,15 @@
                 font-weight: bold;
             }
 
-            .faq-div:hover {
+            .review-div:hover {
                 box-shadow: 1px 1px 7px #0D92F4;
             }
 
             .form-div:hover {
+                box-shadow: 1px 1px 7px #0D92F4;
+            }
+
+            .review-img:hover {
                 box-shadow: 1px 1px 7px #0D92F4;
             }
         </style>
@@ -68,10 +74,10 @@
                 </div>
                 <div class="col-8">
                     <ul class="links" id="nav-links">
-                        <li><a href="#">Homepage</a></li>
+                        <li><a href="homepage.html">Homepage</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Our Courses</a></li>
-                        <li><a href="#">Admissions</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                     <div class="hamburger" id="hamburger">
@@ -134,14 +140,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5 reveal">
+                    <div class="col-5 reveal-left">
                         <img class="enroll-img" src="images/enroll.png">
                     </div>
-                    <div class="col-7 reveal">
+                    <div class="col-7">
                         <ul class="ul-list" style="list-style-type: disc;">
-                            <li class="list">Select the desired <a href="#" target="_blank">course</a> you wish to follow,</li>
-                            <li class="list">Fill out the form with all your details,</li>
-                            <li class="list">Wait for our response by email or phone number.</li>
+                            <li class="list reveal-left">Select the desired <a href="#" target="_blank">course</a> you wish to follow,</li>
+                            <li class="list reveal-right">Fill out the form with all your details,</li>
+                            <li class="list reveal-left">Wait for our response by email or phone number.</li>
                         </ul>
                     </div>
                 </div>
@@ -191,18 +197,18 @@
                     </div>
                 </div>
             </section>
-            <section class="faq">
+            <section class="reviews">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 reveal">
                         <h2 class="title-main">Reviews</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <div class="faq-div reveal">
+                        <div class="review-div reveal">
                             <div class="row">
                                 <div class="col-3">
-                                    <img class="faq-img" src="images/faq1.webp">
+                                    <img class="review-img" src="images/faq1.webp">
                                     <p>Emma Brown</p>
                                 </div>
                                 <div class="col-9">
@@ -219,10 +225,10 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="faq-div reveal">
+                        <div class="review-div reveal">
                             <div class="row">
                                 <div class="col-3">
-                                    <img class="faq-img" src="images/faq2.jpg">
+                                    <img class="review-img" src="images/faq2.jpg">
                                     <p>Thomas Taylor</p>
                                 </div>
                                 <div class="col-9">
@@ -239,10 +245,10 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="faq-div reveal">
+                        <div class="review-div reveal">
                             <div class="row">
                                 <div class="col-3">
-                                    <img class="faq-img" src="images/faq3.png">
+                                    <img class="review-img" src="images/faq3.png">
                                     <p>Hannah Harris</p>
                                 </div>
                                 <div class="col-9">
@@ -264,11 +270,11 @@
                     <div class="col-4">
                         <div class="row">
                             <div class="col-12">
-                                <div class="form-div">
+                                <div class="form-div reveal">
                                     <form>
                                         <h3>Leave a Review</h3>
                                         <h4>Comment:</h4>
-                                        <textarea></textarea>
+                                        <textarea id="comment-input"></textarea>
                                         <h4 class="rating-h4">Rating:</h4>
                                         <div class="clickable-rating">
                                             <span data-value="1">★</span>
@@ -277,13 +283,42 @@
                                             <span data-value="4">★</span>
                                             <span data-value="5">★</span>
                                         </div>
-                                        <button onclick="formFilled()" type="submit">Submit</button>                                
+                                        <button type="button" onclick="formFilled()">Submit</button>                                
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-4"></div>
+                </div>
+            </section>
+            <section class="faq">
+                <div class="row">
+                    <div class="col-12 reveal">
+                        <h2 class="title-main">Frequently Asked Questions</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <dl>
+                            <dt class="reveal-left">★ What makes Algoverse Academy different from other programming schools?</dt>
+                            <dd>Algoverse Academy focuses on hands-on learning with real-world projects and mentorship from experienced developers, ensuring you’re job-ready by the end of the course.</dd>
+                        
+                            <dt class="reveal-right">★ I’m completely new to coding. Can I still join?</dt>
+                            <dd>Absolutely! We have beginner-friendly courses that start with the basics and guide you step-by-step.</dd>
+                        
+                            <dt class="reveal-left">★ How much time will I need to dedicate each week?</dt>
+                            <dd>It depends on the course, but most require 5-10 hours per week. You can learn at your own pace since the lessons are pre-recorded.</dd>
+
+                            <dt class="reveal-right">★ Will I get help if I’m stuck on a project or concept?</dt>
+                            <dd>Of course! We offer live Q&A sessions, a community forum, and one-on-one support from our instructors.</dd>
+
+                            <dt class="reveal-left">★ Do I need any special software or tools to start?</dt>
+                            <dd>Nope! We’ll guide you through setting up everything you need, and most courses only require a laptop and an internet connection.</dd>
+                        </dl>
+                    </div>
+                    <div class="col-2"></div>
                 </div>
             </section>
         </main>
@@ -371,6 +406,17 @@
         });
     });
 });
+
+document.querySelectorAll('dt').forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            if (answer.classList.contains('visible')) {
+                answer.classList.remove('visible');
+            } else {
+                answer.classList.add('visible');
+            }
+        });
+    });
           </script>
     </body>
 </html>

@@ -353,7 +353,11 @@ ul {
     background-color: #4CC9FE;
 }
 
-/* FAQ */
+/* REVIEWS */
+
+.reviews {
+    padding-bottom: 80px;
+}
 
 .rating {
     display: flex;
@@ -424,12 +428,14 @@ ul {
     cursor: not-allowed;
     color: gray;
 }
-.faq-img {
+.review-img {
     border-radius: 50%;
     max-width: 80px;
+    box-shadow: 1px 1px 7px;
+    transition: 0.3s ease box-shadow;
 }
 
-.faq-div {
+.review-div {
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
@@ -438,7 +444,7 @@ ul {
     transition: 0.3s ease box-shadow;
 }
 
-.faq-div .col-9 p {
+.review-div .col-9 p {
     margin-left: 12px;
     text-align: justify;
     line-height: 1.2;
@@ -492,6 +498,46 @@ ul {
     background-color: #4CC9FE;
 }
 
+/* FAQ */
+
+.faq {
+    background-color: #FFF1DB;
+    padding-bottom: 80px;
+}
+
+dl {
+    width: 82%;
+    margin: 0 auto;
+}
+
+dt {
+    font-weight: bold;
+    font-size: 21px;
+    font-family: 'MyFont', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease color;
+}
+
+dd {
+    font-size: 21px;
+    font-family: 'MyFont', Arial, Helvetica, sans-serif;
+    margin: 0 0 20px 20px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+dd.visible {
+    opacity: 1;
+    max-height: 120px;
+}
+
+dt:hover {
+    color: #007BFF;
+}
+
 /* FOOTER */
 
 footer {
@@ -499,6 +545,7 @@ footer {
     text-align: center;
     font-size: 15px;
 }
+
 .reveal {
     position: relative;
     transform: translateY(50px);
@@ -508,6 +555,32 @@ footer {
 
 .reveal.active {
     transform: translateY(0px);
+    opacity: 1;
+    z-index: 1;
+}
+
+.reveal-left {
+    position: relative;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal-left.active {
+    transform: translateX(0px);
+    opacity: 1;
+    z-index: 1;
+}
+
+.reveal-right {
+    position: relative;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal-right.active {
+    transform: translateX(0px);
     opacity: 1;
     z-index: 1;
 }
