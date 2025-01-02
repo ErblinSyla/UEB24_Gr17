@@ -190,6 +190,8 @@ ul {
     text-align: left;
     height: 98vh;
     align-items:center;
+    position:relative;
+    padding-bottom:80px;
     padding: 20px;
    
 }
@@ -215,6 +217,15 @@ ul {
     margin-right:90px;
 }
 
+.text-admission {
+    position: absolute; /* Position at the bottom */
+    bottom: 220px; /* Aligns to the bottom of the section */
+    width: 100%; /* Stretches the div across the section width */
+    text-align: center; /* Centers the content inside */
+}
+
+
+
 .cta-button {
     background-color: #00B5E2; /* Cyan background for the button */
     color: white;
@@ -229,4 +240,32 @@ ul {
     background-color: #00FFFF; /* Light cyan hover effect */
 }
 
+
+#apple{
+    width:70px;
+    height:auto;
+}
+ #google{
+    width:100px;
+    height:auto;
+    margin-bottom:-18px;
+    margin-left: 40px;
+}
+#microsoft{
+    width:150px;
+    height:auto;
+    margin-left:40px;
+}
+#spotify{
+    width:100px;
+    height:auto;
+    margin-bottom:7px;
+    margin-left:40px;
+}
+#amazon{
+    width:100px;
+    height:auto;
+    margin-bottom:7px;
+    margin-left: 40px;
+}
 
