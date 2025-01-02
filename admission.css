@@ -405,6 +405,25 @@ ul {
     color: darkgoldenrod;
 }
 
+.clickable-rating span {
+    font-size: 2rem;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.clickable-rating span:hover,
+.clickable-rating span.hover {
+    color: darkgoldenrod;
+}
+
+.clickable-rating span.selected {
+    color: gold;
+}
+
+.clickable-rating span.locked {
+    cursor: not-allowed;
+    color: gray;
+}
 .faq-img {
     border-radius: 50%;
     max-width: 80px;
@@ -423,6 +442,54 @@ ul {
     margin-left: 12px;
     text-align: justify;
     line-height: 1.2;
+}
+
+.form-div {
+    padding: 40px;
+    margin: 40px;
+    border-radius: 10px;
+    min-height: 150px;
+    box-shadow: 1px 1px 7px;
+    transition: 0.3s ease box-shadow;
+    padding: 20px;
+    margin: 40px 0;
+}
+
+.form-div .clickable-rating {
+    text-align: center;
+}
+
+.form-div h3 {
+    text-align: center;
+}
+
+.form-div .rating-h4 {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.form-div textarea{
+    width: 100%;
+    min-height: 120px;
+    border-radius: 7px;
+}
+
+.form-div button {
+    display: block;
+    margin: auto;
+    padding: 9px 17px;
+    color: darkblue;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 2px solid black;
+    background-color: #0D92F4;
+    transition: 0.3s ease background-color;
+    margin-top: 25px;
+}
+
+.form-div button:hover {
+    cursor: pointer;
+    background-color: #4CC9FE;
 }
 
 /* FOOTER */

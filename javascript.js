@@ -13,3 +13,7 @@ function reveal() {
     }   
 }
 
+function formFilled() {
+    alert("The review has successfully been published!");
+}
+

@@ -54,6 +54,10 @@
             .faq-div:hover {
                 box-shadow: 1px 1px 7px #0D92F4;
             }
+
+            .form-div:hover {
+                box-shadow: 1px 1px 7px #0D92F4;
+            }
         </style>
     </head>
     <body>
@@ -260,9 +264,22 @@
                     <div class="col-4">
                         <div class="row">
                             <div class="col-12">
-                                <form>
-                                    <h3>Leave a Review</h3>
-                                </form>
+                                <div class="form-div">
+                                    <form>
+                                        <h3>Leave a Review</h3>
+                                        <h4>Comment:</h4>
+                                        <textarea></textarea>
+                                        <h4 class="rating-h4">Rating:</h4>
+                                        <div class="clickable-rating">
+                                            <span data-value="1">★</span>
+                                            <span data-value="2">★</span>
+                                            <span data-value="3">★</span>
+                                            <span data-value="4">★</span>
+                                            <span data-value="5">★</span>
+                                        </div>
+                                        <button onclick="formFilled()" type="submit">Submit</button>                                
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -316,9 +333,44 @@
             $(this).toggleClass('selected', starValue <= value);
         });
     });
+
+    $('.clickable-rating').each(function () {
+        let isLocked = false;
+
+        const stars = $(this).find('span');
+
+        stars.on('mouseover', function () {
+            if (isLocked) return;
+
+            const value = $(this).data('value');
+
+            $(this).siblings().addBack().each(function () {
+                $(this).toggleClass('hover', $(this).data('value') <= value);
+            });
+        });
+
+        stars.on('mouseout', function () {
+            if (isLocked) return;
+
+            stars.removeClass('hover');
+        });
+
+        stars.on('click', function () {
+            if (isLocked) return;
+
+            const value = $(this).data('value');
+            console.log('Rating selected:', value);
+
+            stars.each(function () {
+                $(this).toggleClass('selected', $(this).data('value') <= value);
+            });
+
+            isLocked = true;
+            stars.removeClass('hover');
+            console.log('Rating is now locked');
+        });
+    });
 });
-
-
-        </script>
+          </script>
     </body>
 </html>
