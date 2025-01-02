@@ -1,8 +1,13 @@
 /* General Reset */
 body {
     margin: 0;
+    padding:0;
     line-height: 1;
     font-family: sans-serif, serif;
+}
+section{
+    margin:0;
+    padding:0;
 }
 .row {
     width: 100%;
@@ -180,7 +185,10 @@ ul {
 
 .main-section {
     min-height: 100vh;
+    margin:0;
+    padding:0;
 }
+
 .main-wallpaper {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(images/homepage-wallpaper.jpg) center/cover no-repeat;
     background-size: cover;
@@ -195,6 +203,7 @@ ul {
     padding: 20px;
    
 }
+
 
 .header-text{
     font-size:2rem;
@@ -222,6 +231,7 @@ ul {
     bottom: 220px; /* Aligns to the bottom of the section */
     width: 100%; /* Stretches the div across the section width */
     text-align: center; /* Centers the content inside */
+   
 }
 
 
@@ -269,3 +279,111 @@ ul {
     margin-left: 40px;
 }
 
+.instructors {
+    background: #FFF1DB;
+    padding:700px; /* Add space inside the section */
+    margin: 0; /* Ensure no outside gaps */
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+.instructors h2 {
+    position: absolute;
+    top: 5px; /* Moves the heading above the section */
+    left: 0; /* Aligns to the left of the section */
+    width: 100%; /* Ensures the heading spans the full width */
+    text-align: center; /* Centers the text horizontally */
+    font-size: 1.5rem;
+}
+.instructors p{
+    position:absolute;
+    top:50px;
+    left:0;
+    width:100%;
+    text-align: center;
+    font-size:1.2rem;
+}
+.instructor-1{
+    background: #E4C89C;
+    position: absolute;
+    top:130px;
+    width:1300px;
+    height:305.75px;
+    right:120px;
+    text-align:center;
+    justify-content: space-between; /* Space between image and text */
+}
+
+#instructor1_image{
+    width:300px;
+    height:auto;
+    margin-right:1000px;
+}
+#instructor1-name{
+    margin-top:-300px;
+    margin-left:250px;
+}
+#instructor1-degree{
+    font-size:1.2rem;
+    margin-top:40px;
+    margin-left:120px;
+}
+#instructor1-description{
+    margin-top:30px;
+    margin-right:400px;
+}
+
+.instructor-2{
+    position: absolute;
+    bottom:20px;
+    background: #E4C89C;
+    width:1300px;
+    height:305.85px;
+    top:550px;
+    right:120px;
+}
+#instructor2_image{
+    width:300px;
+    height:305.85px;
+    margin-right:1000px;
+}
+#instructor2-name{
+    margin-top:-300px;
+    margin-left:250px;
+}
+#instructor2-degree{
+    font-size:1.2rem;
+    margin-top:45px;
+    margin-left:120px;
+}
+#instructor2-description{
+    margin-top:40px;
+    margin-right:400px;
+}
+.instructor-3{
+    position:absolute;
+    bottom:20px;
+    background:#E4C89C;
+    width:1300px;
+    height:305.75px;
+    top:970px;
+    right:120px;
+}
+#instructor3_image{
+    width:300px;
+    height:305.75px;
+    margin-right:1000px;
+}
+#instructor3-name{
+    margin-top:-290px;
+    margin-left:250px;
+}
+#instructor3-degree{
+    font-size:1.2rem;
+    margin-top:45px;
+    margin-left:120px;
+}
+#instructor3-description{
+    margin-top:40px;
+    margin-right:400px;
+}
