@@ -189,6 +189,25 @@ ul {
     color: whitesmoke;
 }
 
+.all-courses img {
+    width: 450px;
+    height: 300px;
+    box-shadow: 1px 1px 7px;
+    border-radius: 10px;
+    transition: 0.3s ease box-shadow;
+}
+
+.all-courses img:hover {
+    box-shadow: 1px 1px 7px #0D92F4;
+}
+
+.all-courses p {
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: justify;
+    font-family: 'MyFont', Arial, Helvetica, sans-serif;
+}
+
 /* FRONT END */
 
 .front-end {
@@ -228,7 +247,6 @@ footer {
     background: linear-gradient(45deg, #4CC9FE, #0D92F4);
     text-align: center;
     font-size: 15px;
-    margin-top: 100px;
 }
 
 /* OTHER */
@@ -242,6 +260,32 @@ footer {
 
 .reveal.active {
     transform: translateY(0px);
+    opacity: 1;
+    z-index: 1;
+}
+
+.reveal-left {
+    position: relative;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal-left.active {
+    transform: translateX(0px);
+    opacity: 1;
+    z-index: 1;
+}
+
+.reveal-right {
+    position: relative;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal-right.active {
+    transform: translateX(0px);
     opacity: 1;
     z-index: 1;
 }
