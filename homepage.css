@@ -40,7 +40,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2px 20px;
+    padding: 0 20px;
+    height: 67.83px;
 }
 
 .navbar-container {
@@ -50,9 +51,11 @@ nav {
     align-items: center;
     padding: 10px 20px;
 }
+
 /* Title */
 .title h2 {
-    margin-left: 50px;
+    margin-top:-40px;
+    margin-left: 100px;
 }
 ul {
     float: right;
@@ -108,6 +111,12 @@ ul {
     background-color: #0A7FD1;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
+#logo {
+    width: 60px;  /* Adjust the width as per your preference */
+    height: 56px; /* Adjust the height accordingly */
+    object-fit: contain; /* Ensures the aspect ratio of the logo remains intact */
+}
+
 
 /* Responsive Design */
 @media (max-width: 1010px) {
@@ -312,16 +321,20 @@ ul {
     right:120px;
     text-align:center;
     justify-content: space-between; /* Space between image and text */
+    box-sizing: border-box;  /* Ensure padding doesn't affect the width of the div */
+    overflow: hidden;
 }
 
 #instructor1_image{
     width:300px;
-    height:auto;
+    height:305.75px;
+    float:left;
     margin-right:1000px;
 }
 #instructor1-name{
-    margin-top:-300px;
-    margin-left:250px;
+    position:absolute;
+    top:-10px;
+    right:450px;
 }
 #instructor1-degree{
     font-size:1.2rem;
@@ -329,8 +342,20 @@ ul {
     margin-left:120px;
 }
 #instructor1-description{
+    font-size:1.1rem;
     margin-top:30px;
     margin-right:400px;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    line-height: 1.5;
+    padding-left: 320px;  /* Keep space from the left of the image */
+    margin-right: 20px;
+    overflow: hidden;  /* Hide text if it exceeds the container's boundaries */
+    text-overflow: ellipsis;  
+    max-width: calc(100% - 320px);
+    margin-right: 20px;  /* Ensure it doesn't touch the right edge */
 }
 
 .instructor-2{
@@ -348,7 +373,7 @@ ul {
     margin-right:1000px;
 }
 #instructor2-name{
-    margin-top:-300px;
+    margin-top:-290px;
     margin-left:250px;
 }
 #instructor2-degree{
@@ -357,8 +382,20 @@ ul {
     margin-left:120px;
 }
 #instructor2-description{
-    margin-top:40px;
+    font-size:1.1rem;
+    margin-top:30px;
     margin-right:400px;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    line-height: 1.5;
+    padding-left: 320px;  /* Keep space from the left of the image */
+    margin-right: 20px;
+    overflow: hidden;  /* Hide text if it exceeds the container's boundaries */
+    text-overflow: ellipsis;  
+    max-width: calc(100% - 320px);
+    margin-right: 20px;  /* Ensure it doesn't touch the right edge */
 }
 .instructor-3{
     position:absolute;
@@ -384,10 +421,28 @@ ul {
     margin-left:120px;
 }
 #instructor3-description{
-    margin-top:40px;
+    font-size:1.1rem;
+    margin-top:30px;
     margin-right:400px;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    line-height: 1.5;
+    padding-left: 320px;  /* Keep space from the left of the image */
+    margin-right: 20px;
+    overflow: hidden;  /* Hide text if it exceeds the container's boundaries */
+    text-overflow: ellipsis;  
+    max-width: calc(100% - 320px);
+    margin-right: 20px;  /* Ensure it doesn't touch the right edge */
 }
 
+@media (max-width: 768px) {
+    .instructor-1, .instructor-2, .instructor-3 {
+        width: 100%; /* Make each instructor take full width on small screens */
+        margin-bottom: 20px; /* Add spacing between stacked elements */
+    }
+}
 
 
 
@@ -513,7 +568,7 @@ blockquote {
 */
 .flexible-learning{
     background: #FFF1DB;
-    padding:350px; /* Add space inside the section */
+    padding:400px; /* Add space inside the section */
     margin: 0; /* Ensure no outside gaps */
     text-align: center;
     align-items: center;
@@ -543,11 +598,54 @@ blockquote {
     top:240px;
     right:100px;
     list-style-position: inside;
+    list-style: none;
 }
 .flexible-options  li{
    font-size:1.2rem;
-    margin-bottom:100px;
+    
+    margin-bottom: 200px; /* Add space between list items if needed */
+    margin-top:-100px;
+    margin-right:-50px;
+   
 }
+.flexible-options #mobile{
+    
+  
+    display: flex; /* Enable flexbox for alignment */
+    align-items: center; /* Align text and image vertically */
+    gap: 10px; /* Add space between the image and the text */
+    padding-left: 100px; /* Space for the image and text */
+
+    min-height: 70px; /* Ensure the list item is tall enough for the image */
+    background-image: url('images/mobile.png'); /* Replace with your image path */
+    background-repeat: no-repeat;
+    background-size: 70px 70px; /* Adjust size of the image */
+    background-position: left center; /* Center the image vertically */
+}
+.flexible-options #download{
+    display: flex; /* Enable flexbox for alignment */
+    align-items: center; /* Align text and image vertically */
+    gap: 10px; /* Add space between the image and the text */
+    padding-left: 100px; /* Space for the image and text */
+    min-height: 85px; /* Ensure the list item is tall enough for the image */
+    background-image: url('images/download.png'); /* Replace with your image path */
+    background-repeat: no-repeat;
+    background-size: 85px 85px; /* Adjust size of the image */
+    background-position: left center; /* Center the image vertically */
+}
+
+.flexible-options #support{
+    display: flex; /* Enable flexbox for alignment */
+    align-items: center; /* Align text and image vertically */
+    gap: 10px; /* Add space between the image and the text */
+    padding-left: 100px; /* Space for the image and text */
+    min-height: 70px; /* Ensure the list item is tall enough for the image */
+    background-image: url('images/support.png'); /* Replace with your image path */
+    background-repeat: no-repeat;
+    background-size: 70px 70px; /* Adjust size of the image */
+    background-position: left center; /* Center the image vertically */
+}
+
 .flexible-options  li::marker{
     margin-right:10px;
     

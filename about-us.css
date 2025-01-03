@@ -36,7 +36,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2px 20px;
+    padding: 0 20px;
+    height: 67.83px;
 }
 
 .navbar-container {
@@ -47,8 +48,15 @@ nav {
     padding: 10px 20px;
 }
 
+#logo {
+    width: 60px;  /* Adjust the width as per your preference */
+    height: 56px; /* Adjust the height accordingly */
+    object-fit: contain; /* Ensures the aspect ratio of the logo remains intact */
+    margin-top:2px;
+}
 .title h2 {
-    margin-left: 50px;
+    margin-top:-40px;
+    margin-left: 100px;
 }
 
 nav ul {
