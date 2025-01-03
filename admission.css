@@ -70,7 +70,9 @@ ul {
 .links li {
     margin-left: 35px;
 }
-
+.links li #admission {
+    color:blue;
+}
 .links li a {
     text-decoration: none;
     color: black;

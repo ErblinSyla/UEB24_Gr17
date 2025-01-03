@@ -72,7 +72,9 @@ nav ul {
 .links li {
     margin-left: 35px;
 }
-
+.links li #about{
+    color:blue;
+}
 .links li a {
     text-decoration: none;
     color: black;
