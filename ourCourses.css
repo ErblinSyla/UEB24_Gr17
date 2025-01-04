@@ -7,14 +7,10 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #FFF1DB;
-    /* padding: 20px; */
 }
 
 nav {
     background: linear-gradient(45deg, #4CC9FE, #0D92F4);
-
-    /* background-color: #333; */
-    /* color: white; */
     padding: 15px 15px;
     justify-content: space-between;
     align-items: center;
@@ -88,8 +84,9 @@ nav .hamburger {
 }
 
 section {
-    margin-top: 40px;
-    margin-bottom: 20px;    
+    /* margin-top: 40px;
+    margin-bottom: 20px;     */
+    padding: 40px 0;
 }
 
 h2 {
@@ -183,10 +180,7 @@ h2 {
 
 footer {
     text-align: center;
-    /* margin-top: 40px; */
     padding: 20px;
-    /* background-color: #333; */
-    /* color: white; */
     background: linear-gradient(45deg, #4CC9FE, #0D92F4);
 
 }
@@ -214,9 +208,9 @@ footer {
 
 /* pop up */
 .apply-modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
-    z-index: 1; /* Sit on top */
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%;
