@@ -6,7 +6,7 @@
     <title>Courses and Professors</title>
     <link rel="stylesheet" href="ourCourses.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="javascript.js"></script>
+    <script src="ourCourses.js"></script>
   </head>
   <body>
 
@@ -95,6 +95,35 @@
         </div>
       </div>
     </section>
+
+    
+    <div class="apply-container">
+      <button id="applyButton">Apply for a Course</button>
+    </div>
+
+    <div id="applyModal" class="apply-modal">
+      <div class="apply-modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h3>Apply for a Course</h3>
+        <form id="applyForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="course">Select Course:</label>
+          <select id="course" name="course" required>
+            <option value="webDevelopment">Web Development</option>
+            <option value="dataScience">Data Science</option>
+            <option value="uiUxDesign">UI/UX Design</option>
+          </select>
+
+          <button type="submit">Submit Application</button>
+        </form>
+      </div>
+    </div>
+
 
     <!-- Cardat per profa -->
     <section style="background-color: white" >
