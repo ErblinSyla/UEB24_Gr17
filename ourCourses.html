@@ -7,28 +7,43 @@
     <link rel="stylesheet" href="ourCourses.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="ourCourses.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Changa:wght@200..800&family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Spicy+Rice&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
   </head>
   <body>
 
     <nav>
-      <div class="row mobile-row">
-        <div class="col-4 title">
-          <h2>AlgoVerse Academy</h2>
-        </div>
-        <div class="col-8">
-          <ul class="links" id="nav-links">
-            <li><a href="#">Homepage</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Courses</a></li>
-            <li><a href="#">Admissions</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          <div class="hamburger" id="hamburger">
-            <p>&#9776;</p>
+      <div class="row mobile-row" style="justify-content: space-between; width: 100%;">
+          <div class="col-4 title">
+              <div class="logo">
+                  <img id="logo" src="algoverse_logo.svg" alt="AlgoVerse Academy Logo">
+              </div>
+              <h2 style="color: black;">AlgoVerse Academy</h2>
           </div>
-        </div>
+          <div class="col-8">
+              <ul class="links" id="nav-links">
+                  <li><a href="homepage.html">Homepage</a></li>
+                  <li><a href="about-us.html">About Us</a></li>
+                  <li><a id="courses" href="courses.html">Our Courses</a></li>
+                  <li><a href="admission.html">Admissions</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+              <div class="hamburger" id="hamburger">
+                  <p>&#9776;</p>
+              </div>
+          </div>
       </div>
-    </nav>
+  </nav> 
 
     <!-- cards -->
     <section class="courses">

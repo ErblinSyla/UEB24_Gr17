@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif, serif;
     background-color: #FFF1DB;
 }
 
@@ -61,7 +61,76 @@ nav .hamburger {
     text-align: center;
 }
 
+nav {
+    background: linear-gradient(45deg, #4CC9FE, #0D92F4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 67.83px;
+}
+
+.navbar-container {
+    background: linear-gradient(45deg, #4CC9FE, #0D92F4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+#logo {
+    width: 60px;  /* Adjust the width as per your preference */
+    height: 56px; /* Adjust the height accordingly */
+    object-fit: contain; /* Ensures the aspect ratio of the logo remains intact */
+    margin-top:2px;
+}
+.title h2 {
+    margin-top:-40px;
+    margin-left: 100px;
+}
+
+ul {
+    float: right;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    margin-right: 45px;
+}
+
+.links li {
+    margin-left: 35px;
+}
+.links li #courses {
+    color:blue;
+}
+.links li a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease color;
+}
+
+.links li a:hover {
+    color: blue;
+}
+
+.title-main {
+    text-align: center;
+    margin: 60px 0;
+}
+
+
 @media (max-width: 768px) {
+    .mobile-row .col-4 {
+        flex: 0 0 83.3333%;
+        max-width: 83.3333%;
+    }
+
+    .mobile-row .col-8 {
+        flex: 0 0 16.6667%;
+        max-width: 16.6667%;
+    }
+    
     nav ul {
         display: none;
         width: 100%;
@@ -270,4 +339,14 @@ footer {
 
 .close-btn:hover {
     color: #0d92f4;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url(fonts/Rubik/Rubik-VariableFont_wght.ttf); 
+}
+
+@font-face {
+    font-family: 'MyFontItalic';
+    src: url(fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf); 
 }
