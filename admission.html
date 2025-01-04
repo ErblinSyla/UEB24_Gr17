@@ -324,7 +324,26 @@
                         </table>
                     </div>
                 </div>
+                <audio id="td-hover-audio" src="audio/div-hover.mp3"></audio>
+
             </section>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+    const tableCells = document.querySelectorAll(".pricing-plans table td"); // Select all <td> elements in the table
+    const hoverAudio = document.getElementById("td-hover-audio"); // Get the audio element
+
+    // Add event listeners for each <td> element
+    tableCells.forEach(td => {
+        td.addEventListener("mouseenter", function () {
+            hoverAudio.currentTime = 0; // Restart audio
+            hoverAudio.play().catch(error => {
+                console.error("Audio playback failed:", error);
+            });
+        });
+    });
+});
+
+            </script>
             <section class="payment">
                 <div class="row">
                     <div class="col-12 reveal">
@@ -369,7 +388,42 @@
                         </div>
                     </div>
                 </div>
+                <audio id="hover-audio" src="audio/div-hover.mp3"></audio>
+                <audio id="click-audio" src="button-click.mp3"></audio>
+
             </section>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+    const paymentImages = document.querySelectorAll(".pay-img"); // Select all pay-img elements
+    const paymentButtons = document.querySelectorAll(".payment-col button"); // Select all buttons
+
+    const hoverAudio = document.getElementById("hover-audio"); // Hover audio element
+    const clickAudio = document.getElementById("click-audio"); // Click audio element
+
+    const playAudio = (audioElement) => {
+        audioElement.currentTime = 0; // Restart audio
+        audioElement.play().catch(error => {
+            console.error("Audio playback failed:", error);
+        });
+    };
+
+    // Play hover audio when hovering over images
+    paymentImages.forEach(image => {
+        image.addEventListener("mouseenter", function () {
+            playAudio(hoverAudio);
+        });
+    });
+
+    // Play click audio when clicking buttons
+    paymentButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            playAudio(clickAudio);
+        });
+    });
+});
+
+
+            </script>
             <section class="reviews">
                 <div class="row">
                     <div class="col-12 reveal">
