@@ -53,13 +53,14 @@
 
 
         <nav>
+            
             <div class="row mobile-row">
                 <div class="col-4 title">
                     <div class="logo">
                         <img id="logo" src="algoverse_logo.svg" alt="AlgoVerse Academy Logo">
                           
                     </div>
-                    <h2>Homepage - AlgoVerse Academy</h2>
+                    <h2>AlgoVerse Academy</h2>
                 </div>
                 <div class="col-8">
                     <ul class="links" id="nav-links">
@@ -75,6 +76,67 @@
                 </div>
             </div>
         </nav> 
+        <audio id="nav-hover-audio" src="audio/navbar-hover.mp3"></audio>
+        <audio id="nav-click-audio" src="audio/shift-page.mp3"></audio>
+
+
+        <script> // Function to play audio on hover
+            function addHoverAudioEffectToLinks(linkSelector, audioId) {
+                const links = document.querySelectorAll(linkSelector);
+                const audio = document.getElementById(audioId);
+        
+                if (audio) {
+                    links.forEach(link => {
+                        link.addEventListener('mouseenter', () => {
+                            audio.currentTime = 0; // Restart the audio from the beginning
+                            audio.play().catch(error => {
+                                console.error('Audio playback failed:', error);
+                            });
+                        });
+                    });
+                } else {
+                    console.error(`Audio element not found: ${audioId}`);
+                }
+            }
+        
+            // Wait for the DOM to load and then attach the hover effect
+            document.addEventListener('DOMContentLoaded', () => {
+                addHoverAudioEffectToLinks('.links a', 'nav-hover-audio');
+            });
+
+
+            function addClickAudioEffectToLinks(linkSelector, audioId) {
+        const links = document.querySelectorAll(linkSelector);
+        const audio = document.getElementById(audioId);
+
+        if (audio) {
+            links.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent the default link action temporarily
+                    audio.currentTime = 0; // Restart the audio from the beginning
+                    audio.play().catch(error => {
+                        console.error('Audio playback failed:', error);
+                    });
+
+                    // Optionally, navigate to the link after audio is played
+                    audio.onended = () => {
+                        window.location.href = link.href;
+                    };
+                });
+            });
+        } else {
+            console.error(`Audio element not found: ${audioId}`);
+        }
+    }
+
+    // Wait for the DOM to load and then attach the click effect
+    document.addEventListener('DOMContentLoaded', () => {
+        addClickAudioEffectToLinks('.links a', 'nav-click-audio');
+    });
+
+
+    </script>
+
         <script src="homepage.js"></script>
         <main class="main-section">
 
@@ -116,6 +178,7 @@
                 <p><strong>Learn from industry professionals with years of experience.</strong></p>
                 <div class="instructor-1">
                     <!--                             INSTRUCTOR 1                            -->
+                    <audio id="audio1" src="audio/div-hover.mp3"></audio>
                     <img id="instructor1_image" src="images/instructor-1.png">
                     <h1 id="instructor1-name">Dhuratë Hyseni</h1>
                     <h2 id="instructor1-degree">PhD Proffesor at University of Prishtina</h2>
@@ -128,6 +191,7 @@
                 </div>
                 <div class="instructor-2">
                     <!--                            INSTRUCTOR 2                            -->
+                    <audio id="audio2" src="audio/div-hover.mp3"></audio>
                     <img id="instructor2_image" src="images/instructor-2.png">
                     <h1 id="instructor2-name">Hussein Hussein</h1>
                     <h2 id="instructor2-degree">PhD Graduate at Northeastern University</h2>
@@ -135,6 +199,7 @@
                 </div>
                 <div class="instructor-3">
                     <!--                             INSTRUCTOR 3                           -->
+                    <audio id="audio3" src="audio/div-hover.mp3"></audio>
                     <img id="instructor3_image" src="images/instructor-3.png">
                     <h1 id="instructor3-name">Ethan Williams</h1>
                     <h2 id="instructor3-degree">PhD Graduate at University of Bridgeport</h2>
@@ -142,7 +207,7 @@
                 </div>
 
             </section>
-
+           
 
 <!--                                       HANDS-ON-PROJECTS SECTION                                         -->
 
@@ -153,6 +218,7 @@
         <p><strong>Build real-world projects to showcase your skills. Here are a few examples:</strong></p>
         <div class="projects">
             <div class="calculator-project">
+                <audio id="audio4" src="audio/div-hover.mp3"></audio>
                 <iframe
                 id="calculator-video"
                 src="https://www.youtube.com/embed/HQCLzqhiT2w"
@@ -165,6 +231,7 @@
                 <p>Create a functional calculator using HTML, CSS, and JavaScript.</p>
             </div>
             <div class="todo-list-project">
+                <audio id="audio5" src="audio/div-hover.mp3"></audio>
                 <iframe
                 id="todo-video"
                 src="https://www.youtube.com/embed/G0jO8kUrg-I"
@@ -177,6 +244,7 @@
                 <p>Build a dynamic to-do list with local storage support.</p>
             </div>
             <div class="weather-project">
+                <audio id="audio1" src="audio/div-hover.mp3"></audio>
                 <iframe
                     id="weather-video"
                     src="https://www.youtube.com/embed/MIYQR-Ybrn4"
@@ -204,11 +272,14 @@
         <p><strong>Access courses online, anytime, anywhere. Learn at your own pace with:</strong></p>
     </div>
     <div class="flexible-content">
+        
         <ul class="flexible-options">
+            
             <li id="mobile"><strong>Mobile-Friendly:</strong> Learn on your phone, tablet, or desktop.</li>
             <li id="download"><strong>Offline Access:</strong> Download course content to study anywhere.</li>
             <li id="support"><strong>24/7 Support:</strong> Get help whenever you need it.</li>
         </ul>
+        <audio id="audio-flexible" src="audio/div-hover.mp3"></audio>
         <img  id="flexible-image" src="images/flexible-learning.png" alt="Flexible Learning Image">
         <blockquote id="quote">
             <p>"AlgoVerse's flexible courses allowed me to learn coding while working full-time!"</p>
@@ -217,7 +288,95 @@
     </div>
         </section>
     </main>
+    <script>
+        // Function to play audio on hover
+function addHoverAudioEffect(instructorSelector, audioId) {
+const instructor = document.querySelector(instructorSelector);
+const audio = document.getElementById(audioId);
 
+if (instructor && audio) {
+instructor.addEventListener('mouseenter', () => {
+    audio.currentTime = 0; // Restart the audio
+    audio.play().catch(error => {
+        console.error('Audio playback failed:', error);
+    });
+});
+} else {
+console.error(`Element not found: ${instructorSelector} or ${audioId}`);
+}
+}
+
+// Attach hover effects
+addHoverAudioEffect('.instructor-1', 'audio1');
+addHoverAudioEffect('.instructor-2', 'audio2');
+addHoverAudioEffect('.instructor-3', 'audio3');
+
+/*document.addEventListener('DOMContentLoaded', () => {
+addHoverAudioEffect('.instructor-1', 'audio1');
+addHoverAudioEffect('.instructor-2', 'audio2');
+addHoverAudioEffect('.instructor-3', 'audio3');
+});
+*/
+function addHoverAudioEffect(elementSelector, audioId) {
+        const element = document.querySelector(elementSelector);
+        const audio = document.getElementById(audioId);
+
+        if (element && audio) {
+            element.addEventListener('mouseenter', () => {
+                audio.currentTime = 0; // Restart the audio
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+            });
+        } else {
+            console.error(`Element not found: ${elementSelector} or ${audioId}`);
+        }
+    }
+
+    // Wait for the DOM to load
+    document.addEventListener('DOMContentLoaded', () => {
+        // Add hover audio effects for the project divs
+        addHoverAudioEffect('.calculator-project', 'audio4');
+        addHoverAudioEffect('.todo-list-project', 'audio5');
+        addHoverAudioEffect('.weather-project', 'audio1');
+    });
+
+   
+
+
+
+
+
+
+
+function addHoverAudioEffect(elementSelector, audioId) {
+        const element = document.querySelector(elementSelector);
+        const audio = document.getElementById(audioId);
+
+        if (element && audio) {
+            element.addEventListener('mouseenter', () => {
+                audio.currentTime = 0; // Restart audio
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+            });
+        } else {
+            console.error(`Element not found: ${elementSelector} or ${audioId}`);
+        }
+    }
+
+    // Wait for the DOM to load
+    document.addEventListener('DOMContentLoaded', () => {
+        addHoverAudioEffect('#flexible-image', 'audio-flexible');
+    });
+
+
+
+
+
+
+
+    </script>
 
 
 

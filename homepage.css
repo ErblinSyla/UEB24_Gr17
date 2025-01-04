@@ -332,6 +332,22 @@ ul {
     animation-delay: 1.2s/*2.4s; /* Stagger animation */
 }
 
+
+
+
+
+
+
+
+
+
+
+/*                               INSTRUCTOR SECTION                                         */
+
+
+
+
+
 .instructors {
     background: #FFF1DB;
     padding:700px; /* Add space inside the section */
@@ -370,7 +386,17 @@ ul {
     box-sizing: border-box;  /* Ensure padding doesn't affect the width of the div */
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(50, 50, 50, 0.7);
+    
 }
+.instructor-1:hover,
+.instructor-2:hover, 
+.instructor-3:hover  {
+    box-shadow: 1px 1px 7px #0D92F4; /* Blue shadow on hover */
+    transform: scale(1.05); /* Slight scale effect */
+    transition: all 0.3s ease;
+}
+
+
 
 #instructor1_image{
     width:300px;
@@ -496,12 +522,15 @@ ul {
 
 
 
-@media (max-width: 768px) {
-    .instructor-1, .instructor-2, .instructor-3 {
-        width: 100%; /* Make each instructor take full width on small screens */
-        margin-bottom: 20px; /* Add spacing between stacked elements */
-    }
-}
+
+
+
+
+/*                          PROJECTS                               */
+
+
+
+
 
 
 
@@ -536,6 +565,9 @@ ul {
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(50, 50, 50, 0.7);
 }
+.calculator-project:hover{
+    box-shadow: 1px 1px 7px #0D92F4;
+}
 .todo-list-project{
     position:absolute;
     background:#eaeaea;
@@ -547,7 +579,9 @@ ul {
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(50, 50, 50, 0.7);
 }
-
+.todo-list-project:hover{
+    box-shadow: 1px 1px 7px #0D92F4;
+}
 
 .weather-project{
     position: absolute;
@@ -560,7 +594,9 @@ ul {
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(50, 50, 50, 0.7);
 } 
-
+.weather-project:hover{
+    box-shadow: 1px 1px 7px #0D92F4;
+}
 
 .calculator-project iframe,
 .todo-list-project iframe,
@@ -617,6 +653,12 @@ blockquote {
     margin: 20px 0;
 }
 */
+
+
+
+
+/*                             FLEXIBLE                                */
+
 .flexible-learning{
     background: #FFF1DB;
     padding:400px; /* Add space inside the section */
@@ -698,10 +740,8 @@ blockquote {
     background-position: left center; /* Center the image vertically */
 }
 
-.flexible-options  li::marker{
-    margin-right:10px;
-    
-    transform: translateY(-20%);
+.flexible-options  li:hover{
+    color:#0D92F4;
 }
 
 
@@ -721,6 +761,9 @@ blockquote {
    border-radius: 20px;
    box-shadow: 0 4px 10px rgba(50, 50, 50, 0.7);
 
+}
+#flexible-image:hover{
+    box-shadow: 1px 1px 7px #0D92F4;
 }
 /* Initial state for animations */
 .projects-main,.projects, .calculator-project, .todo-list-project, .weather-project,
