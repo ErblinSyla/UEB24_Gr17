@@ -92,7 +92,67 @@
                     </div>
                 </div>
             </div>
-        </nav>        
+        </nav>   
+        <audio id="nav-hover-audio" src="audio/navbar-hover.mp3"></audio>
+        <audio id="nav-click-audio" src="audio/shift-page.mp3"></audio>
+
+
+        <script> // Function to play audio on hover
+            function addHoverAudioEffectToLinks(linkSelector, audioId) {
+                const links = document.querySelectorAll(linkSelector);
+                const audio = document.getElementById(audioId);
+        
+                if (audio) {
+                    links.forEach(link => {
+                        link.addEventListener('mouseenter', () => {
+                            audio.currentTime = 0; // Restart the audio from the beginning
+                            audio.play().catch(error => {
+                                console.error('Audio playback failed:', error);
+                            });
+                        });
+                    });
+                } else {
+                    console.error(`Audio element not found: ${audioId}`);
+                }
+            }
+        
+            // Wait for the DOM to load and then attach the hover effect
+            document.addEventListener('DOMContentLoaded', () => {
+                addHoverAudioEffectToLinks('.links a', 'nav-hover-audio');
+            });
+
+
+            function addClickAudioEffectToLinks(linkSelector, audioId) {
+    const links = document.querySelectorAll(linkSelector);
+    const audio = document.getElementById(audioId);
+
+    if (audio) {
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default link action temporarily
+                audio.currentTime = 0; // Restart the audio from the beginning
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+
+                // Navigate after audio is played
+                audio.onended = () => {
+                    window.location.href = link.href;
+                };
+            });
+        });
+    } else {
+        console.error(`Audio element not found: ${audioId}`);
+    }
+}
+
+    // Wait for the DOM to load and then attach the click effect
+    document.addEventListener('DOMContentLoaded', () => {
+        addClickAudioEffectToLinks('.links a', 'nav-click-audio');
+    });
+
+
+    </script>     
         <main class="main-section">
             <section class="wallpaper">
                 <div class="wallpaper-text">
@@ -102,11 +162,35 @@
                         </div>
                         <div class="col-5 wall-button">
                             <p style="font-family: 'MyFontItalic', Arial, Helvetica, sans-serif;">Best choice you can make!</p>
+                            <audio id="enroll-click-audio" src="audio/shift-page.mp3"></audio>
+
                             <a href="#enroll-id"><b>Enroll Now</b></a>
                         </div>
                     </div>
                 </div>
             </section>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+    const enrollLink = document.querySelector(".wall-button a");  // Select the Enroll Now link
+    const enrollAudio = document.getElementById("enroll-click-audio");  // Select the audio element
+
+    // Add click event listener to play audio on click
+    enrollLink.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default behavior (smooth scroll or link navigation)
+
+        enrollAudio.currentTime = 0;  // Restart the audio from the beginning
+        enrollAudio.play().catch(error => {
+            console.error('Audio playback failed:', error);
+        });
+
+        // After audio finishes playing, navigate to the section (you can replace '#enroll-id' with any section)
+        enrollAudio.onended = function () {
+            window.location.href = "#enroll-id";
+        };
+    });
+});
+
+            </script>
             <section class="why-join-us">
                 <div class="row">
                     <div class="col-12 reveal">
@@ -140,6 +224,24 @@
                     </div>
                 </div>
             </section>
+            <audio id="hover-audio" src="audio/div-hover.mp3"></audio>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+    const joinCols = document.querySelectorAll(".join-col");  // Select all the divs with class 'join-col'
+    const hoverAudio = document.getElementById("hover-audio");  // Select the hover audio element
+
+    // Add hover event listeners to each 'join-col' div
+    joinCols.forEach(function (col) {
+        col.addEventListener("mouseenter", function () {
+            hoverAudio.currentTime = 0;  // Restart the audio from the beginning
+            hoverAudio.play().catch(error => {
+                console.error('Audio playback failed:', error);
+            });
+        });
+    });
+});
+
+            </script>
             <section id="enroll-id" class="enroll">
                 <div class="row">
                     <div class="col-12 reveal">
@@ -148,6 +250,8 @@
                 </div>
                 <div class="row">
                     <div class="col-5 reveal-left">
+                        <audio id="image-hover-audio" src="audio/div-hover.mp3"></audio>
+
                         <img class="enroll-img" src="images/enroll.png">
                     </div>
                     <div class="col-7">
@@ -159,6 +263,21 @@
                     </div>
                 </div>
             </section>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+    const enrollImage = document.querySelector(".enroll-img");  // Select the image element
+    const hoverAudio = document.getElementById("image-hover-audio");  // Select the hover audio element
+
+    // Add hover event listener to the image
+    enrollImage.addEventListener("mouseenter", function () {
+        hoverAudio.currentTime = 0;  // Restart the audio from the beginning
+        hoverAudio.play().catch(error => {
+            console.error('Audio playback failed:', error);
+        });
+    });
+});
+
+            </script>
             <section class="pricing-plans">
                 <div class="row">
                     <div class="col-12 reveal">

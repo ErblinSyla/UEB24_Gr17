@@ -106,28 +106,28 @@
 
 
             function addClickAudioEffectToLinks(linkSelector, audioId) {
-        const links = document.querySelectorAll(linkSelector);
-        const audio = document.getElementById(audioId);
+    const links = document.querySelectorAll(linkSelector);
+    const audio = document.getElementById(audioId);
 
-        if (audio) {
-            links.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault(); // Prevent the default link action temporarily
-                    audio.currentTime = 0; // Restart the audio from the beginning
-                    audio.play().catch(error => {
-                        console.error('Audio playback failed:', error);
-                    });
-
-                    // Optionally, navigate to the link after audio is played
-                    audio.onended = () => {
-                        window.location.href = link.href;
-                    };
+    if (audio) {
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default link action temporarily
+                audio.currentTime = 0; // Restart the audio from the beginning
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
                 });
+
+                // Navigate after audio is played
+                audio.onended = () => {
+                    window.location.href = link.href;
+                };
             });
-        } else {
-            console.error(`Audio element not found: ${audioId}`);
-        }
+        });
+    } else {
+        console.error(`Audio element not found: ${audioId}`);
     }
+}
 
     // Wait for the DOM to load and then attach the click effect
     document.addEventListener('DOMContentLoaded', () => {
@@ -162,11 +162,42 @@
             </div>
             <div class="text-admission">
                <p >What are you waiting for? Hop on to our admissions page and see what you can learn more! </p>
-            
+               <audio id="admission-click-audio" src="audio/shift-page.mp3"></audio>
+
                 <a href="admission.html" class="cta-button">Admissions</a>
             </div>
             </section>
+            <script>
+                function addClickAudioEffectToLinks(linkSelector, audioId) {
+    const links = document.querySelectorAll(linkSelector);
+    const audio = document.getElementById(audioId);
 
+    if (audio) {
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default link action temporarily
+                audio.currentTime = 0; // Restart the audio from the beginning
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+
+                // Navigate after audio is played
+                audio.onended = () => {
+                    window.location.href = link.href;
+                };
+            });
+        });
+    } else {
+        console.error(`Audio element not found: ${audioId}`);
+    }
+}
+
+// Wait for the DOM to load and then attach the click effect for the admission link
+document.addEventListener('DOMContentLoaded', () => {
+    addClickAudioEffectToLinks('.cta-button', 'admission-click-audio');
+});
+
+            </script>
 
 
         <!---                                          EXPERT INSTRUCTORS SECTION                                   -->

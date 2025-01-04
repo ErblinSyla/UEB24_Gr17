@@ -44,6 +44,66 @@
           </div>
       </div>
   </nav> 
+  <audio id="nav-hover-audio" src="audio/navbar-hover.mp3"></audio>
+        <audio id="nav-click-audio" src="audio/shift-page.mp3"></audio>
+
+
+        <script> // Function to play audio on hover
+            function addHoverAudioEffectToLinks(linkSelector, audioId) {
+                const links = document.querySelectorAll(linkSelector);
+                const audio = document.getElementById(audioId);
+        
+                if (audio) {
+                    links.forEach(link => {
+                        link.addEventListener('mouseenter', () => {
+                            audio.currentTime = 0; // Restart the audio from the beginning
+                            audio.play().catch(error => {
+                                console.error('Audio playback failed:', error);
+                            });
+                        });
+                    });
+                } else {
+                    console.error(`Audio element not found: ${audioId}`);
+                }
+            }
+        
+            // Wait for the DOM to load and then attach the hover effect
+            document.addEventListener('DOMContentLoaded', () => {
+                addHoverAudioEffectToLinks('.links a', 'nav-hover-audio');
+            });
+
+
+            function addClickAudioEffectToLinks(linkSelector, audioId) {
+    const links = document.querySelectorAll(linkSelector);
+    const audio = document.getElementById(audioId);
+
+    if (audio) {
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default link action temporarily
+                audio.currentTime = 0; // Restart the audio from the beginning
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+
+                // Navigate after audio is played
+                audio.onended = () => {
+                    window.location.href = link.href;
+                };
+            });
+        });
+    } else {
+        console.error(`Audio element not found: ${audioId}`);
+    }
+}
+
+    // Wait for the DOM to load and then attach the click effect
+    document.addEventListener('DOMContentLoaded', () => {
+        addClickAudioEffectToLinks('.links a', 'nav-click-audio');
+    });
+
+
+    </script>
 
     <!-- cards -->
     <section class="courses">
@@ -109,12 +169,59 @@
           </div>
         </div>
       </div>
+      <audio id="card-hover-audio" src="audio/div-hover.mp3"></audio>
+      <script>
+        function addHoverAudioToCourseCards(cardSelector, audioId) {
+    const cards = document.querySelectorAll(cardSelector);
+    const audio = document.getElementById(audioId);
 
+    if (audio) {
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                audio.currentTime = 0; // Restart the audio from the beginning
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+            });
+        });
+    } else {
+        console.error(`Audio element not found: ${audioId}`);
+    }
+}
+
+// Wait for the DOM to load and then attach the hover effect to course cards
+document.addEventListener('DOMContentLoaded', () => {
+    addHoverAudioToCourseCards('.card', 'card-hover-audio');
+});
+      </script>
       
     <div class="apply-container">
+      <audio id="button-click-audio" src="audio/button-click.mp3"></audio>
+
       <button id="applyButton">Apply for a Course</button>
     </div>
+<script>
+  function addClickAudioToButton(buttonSelector, audioId) {
+    const button = document.querySelector(buttonSelector);
+    const audio = document.getElementById(audioId);
 
+    if (button && audio) {
+        button.addEventListener('click', () => {
+            audio.currentTime = 0; // Restart the audio from the beginning
+            audio.play().catch(error => {
+                console.error('Audio playback failed:', error);
+            });
+        });
+    } else {
+        console.error(`Button or audio element not found: ${buttonSelector}, ${audioId}`);
+    }
+}
+
+// Wait for the DOM to load and then attach the click effect to the Apply button
+document.addEventListener('DOMContentLoaded', () => {
+    addClickAudioToButton('#applyButton', 'button-click-audio');
+});
+</script>
     <div id="applyModal" class="apply-modal">
       <div class="apply-modal-content">
         <span class="close-btn" id="closeModal">&times;</span>
@@ -140,7 +247,63 @@
         </form>
       </div>
     </div>
+    <audio id="success-audio" src="audio/review-published.mp3"></audio>
+    <audio id="failure-audio" src="audio/review-cancel.mp3"></audio>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("applyModal");
+    const applyButton = document.getElementById("applyButton");
+    const closeModal = document.getElementById("closeModal");
+  
+    applyButton.onclick = function () {
+        modal.style.display = "block";
+    };
+  
+    closeModal.onclick = function () {
+        modal.style.display = "none";
+    };
+  
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+  
+    const applyForm = document.getElementById("applyForm");
+    applyForm.onsubmit = function (event) {
+        event.preventDefault();
+        
+        // Get form elements
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const course = document.getElementById("course").value;
+        
+        // Audio elements
+        const successAudio = document.getElementById("success-audio");
+        const failureAudio = document.getElementById("failure-audio");
+        
+        // Check if all required fields are filled out
+        if (name && email && course) {
+            // If valid, play success audio
+            successAudio.currentTime = 0; // Restart audio
+            successAudio.play().catch(error => {
+                console.error('Audio playback failed:', error);
+            });
 
+            alert("Application submitted successfully!");
+            modal.style.display = "none"; // Close the modal after submission
+        } else {
+            // If any field is missing, play failure audio
+            failureAudio.currentTime = 0; // Restart audio
+            failureAudio.play().catch(error => {
+                console.error('Audio playback failed:', error);
+            });
+
+            alert("Please fill in all the fields.");
+        }
+    };
+});
+</script>    
 
     </section>
 
