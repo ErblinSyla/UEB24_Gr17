@@ -82,22 +82,23 @@
 
         <script>
             function addHoverAudioEffectToLinks(linkSelector, audioId) {
-                const links = document.querySelectorAll(linkSelector);
-                const audio = document.getElementById(audioId);
-        
-                if (audio) {
-                    links.forEach(link => {
-                        link.addEventListener('mouseenter', () => {
-                            audio.currentTime = 0;
-                            audio.play().catch(error => {
-                                console.error('Audio playback failed:', error);
-                            });
-                        });
-                    });
-                } else {
-                    console.error(`Audio element not found: ${audioId}`);
-                }
-            }
+    const links = document.querySelectorAll(linkSelector);
+    const audio = document.getElementById(audioId);
+
+    if (audio) {
+        // Convert the NodeList to an array and use map() to add event listeners
+        Array.from(links).map(link => {
+            link.addEventListener('mouseenter', () => {
+                audio.currentTime = 0;
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+            });
+        });
+    } else {
+        console.error(`Audio element not found: ${audioId}`);
+    }
+}
 
             document.addEventListener('DOMContentLoaded', () => {
                 addHoverAudioEffectToLinks('.links a', 'nav-hover-audio');
@@ -165,20 +166,21 @@
             </div>
             </section>
             <script>
-                function addClickAudioEffectToLinks(linkSelector, audioId) {
+                function addClickAudioEffectToLinks(linkSelector, audioId, callback) {
     const links = document.querySelectorAll(linkSelector);
     const audio = document.getElementById(audioId);
 
     if (audio) {
         links.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault(); 
-                audio.currentTime = 0; 
+                event.preventDefault();
+                audio.currentTime = 0;
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
 
                 audio.onended = () => {
+                    if (callback) callback();
                     window.location.href = link.href;
                 };
             });
@@ -188,8 +190,16 @@
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    addClickAudioEffectToLinks('.cta-button', 'admission-click-audio');
+// Example usage with a callback:
+addClickAudioEffectToLinks('.cta-button', 'admission-click-audio', () => {
+    console.log('Audio finished, navigating to the next page');
+});
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        const section = document.querySelector('.main-wallpaper');
+        section.style.opacity = '1'; // Fade in the section after 1 second
+        section.style.transition = 'opacity 1s';
+    }, 1000);
 });
 
             </script>
@@ -312,9 +322,56 @@ document.addEventListener('DOMContentLoaded', () => {
             <cite>— Jane Doe, Former Student</cite>
         </blockquote>
     </div>
+    <div class="form-div reveal">
+        <form id="newsletterForm" autocomplete="on">
+            <h3>Sign Up to our Newsletter!</h3>
+            <h4 id="name" >Enter your Name:</h4>
+            <input type="text" id="name-input" placeholder="Enter your name: " required autocomplete="name">
+            <h4 id="name">Enter your E-mail:</h4>
+            <input type="email" id="email-input" placeholder="example@mail.com" required autocomplete="email">
+            <input type="submit" id="submit-input">                                
+        </form>
+    </div>
+    
         </section>
     </main>
     <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+        const nameInput = document.getElementById('name-input');
+        const nameError = document.getElementById('name-error');
+        
+        // Check if the name input contains a number (using isNaN)
+        if (isNaN(nameInput.value) === false || nameInput.value.trim() === "") {
+            // Prevent form submission if it's a number or empty
+            event.preventDefault();  
+            nameError.style.display = "block";  // Show the error message
+        } else {
+            nameError.style.display = "none";  // Hide error message if input is valid
+        }
+    });
+       document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from being submitted immediately
+
+    const nameInputField = document.getElementById('name-input');
+    const emailInputField = document.getElementById('email-input');
+
+    // Check if both fields are filled
+    const formFields = [
+        nameInputField.value,
+        emailInputField.value
+    ];
+
+    const filledFields = formFields.filter(field => field.trim() !== "");
+
+    if (filledFields.length === formFields.length) {
+        alert("Thank you for signing up to our newsletter!");
+    } else {
+        alert("Please fill in all the fields.");
+    }
+});
+
+
+
 function addHoverAudioEffect(instructorSelector, audioId) {
 const instructor = document.querySelector(instructorSelector);
 const audio = document.getElementById(audioId);
@@ -335,27 +392,26 @@ addHoverAudioEffect('.instructor-1', 'audio1');
 addHoverAudioEffect('.instructor-2', 'audio2');
 addHoverAudioEffect('.instructor-3', 'audio3');
 
-/*document.addEventListener('DOMContentLoaded', () => {
-addHoverAudioEffect('.instructor-1', 'audio1');
-addHoverAudioEffect('.instructor-2', 'audio2');
-addHoverAudioEffect('.instructor-3', 'audio3');
-});
-*/
-function addHoverAudioEffect(elementSelector, audioId) {
-        const element = document.querySelector(elementSelector);
-        const audio = document.getElementById(audioId);
 
-        if (element && audio) {
-            element.addEventListener('mouseenter', () => {
+function addHoverAudioEffect(elementSelector, audioId) {
+    const element = document.querySelector(elementSelector);
+    const audio = document.getElementById(audioId);
+
+    if (element && audio) {
+        element.addEventListener('mouseenter', () => {
+            try {
                 audio.currentTime = 0;
-                audio.play().catch(error => {
-                    console.error('Audio playback failed:', error);
-                });
-            });
-        } else {
-            console.error(`Element not found: ${elementSelector} or ${audioId}`);
-        }
+                audio.play(); // Attempt to play the audio
+            } catch (error) {
+                // Catch any error that occurs during the audio play attempt
+                console.error('Error playing audio:', error);
+            }
+        });
+    } else {
+        console.error(`Element not found: ${elementSelector} or ${audioId}`);
     }
+}
+
 
     document.addEventListener('DOMContentLoaded', () => {
         addHoverAudioEffect('.calculator-project', 'audio4');
@@ -392,6 +448,11 @@ function addHoverAudioEffect(elementSelector, audioId) {
         addHoverAudioEffect('#flexible-image', 'audio-flexible');
     });
 
+    document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+    const nameInput = document.getElementById('name-input');
+    // Example: remove any extra spaces before submitting
+    nameInput.value = nameInput.value.replace(/\s+/g, ' ').trim();
+});
 
 
 
@@ -410,9 +471,22 @@ function addHoverAudioEffect(elementSelector, audioId) {
 <footer>
     <div class="row">
         <div class="col-12">
-            <p>&copy; <span id="year">2024</span> <em>AlgoVerse Academy. All rights reserved.</em></p>
+            <p>&copy; <span id="year-month"></span> <em>AlgoVerse Academy. All rights reserved.</em></p>
         </div>
     </div>
 </footer>
+
+<script>
+    // Get current date
+    const currentDate = new Date();
+    
+    // Get the current month and year
+    const currentMonth = currentDate.toLocaleString('default', { month: 'long' });  // Get full month name
+    const currentYear = currentDate.getFullYear();
+    
+    // Display the month and year in the footer
+    document.getElementById('year-month').textContent = `${currentMonth} ${currentYear}`;
+</script>
+
     </body>
 </html>

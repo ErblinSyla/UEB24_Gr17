@@ -7,6 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.classList.toggle("active");
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the current URL
+    const currentPage = window.location.href;
+
+    // Get all anchor tags in the navigation
+    const navLinks = document.querySelectorAll('.links a');
+
+    // Check if the current URL matches any of the link URLs
+    navLinks.forEach(link => {
+        if (currentPage.match(link.href)) {
+            // Add an active class to highlight the current page
+            link.classList.add('active');
+        }
+    });
+});
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
     const elementsToAnimate = document.querySelectorAll(
-        '.projects-main,.projects, .calculator-project, .todo-list-project, .weather-project, .flexible-learning, .flexible-title h2, .flexible-title p, .flexible-options li,#flexible-image,#quote'
+        '.projects-main,.projects, .calculator-project, .todo-list-project, .weather-project, .flexible-learning, .flexible-title h2, .flexible-title p, .flexible-options li,#flexible-image,#quote,.form-div,.form-div h3,.form-div h4,.form-div input,.form-div #submit-input'
     );
 
     const observer = new IntersectionObserver((entries, observer) => {

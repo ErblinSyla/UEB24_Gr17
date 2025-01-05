@@ -67,6 +67,23 @@
                 </div>
             </div>
         </nav> 
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+  // Get the current URL
+  const currentPage = window.location.href;
+
+  // Get all anchor tags in the navigation
+  const navLinks = document.querySelectorAll('.links a');
+
+  // Check if the current URL matches any of the link URLs
+  navLinks.forEach(link => {
+      if (currentPage.match(link.href)) {
+          // Add an active class to highlight the current page
+          link.classList.add('active');
+      }
+  });
+});
+        </script>
         <audio id="nav-hover-audio" src="audio/navbar-hover.mp3"></audio>
         <audio id="nav-click-audio" src="audio/shift-page.mp3"></audio>
 
@@ -324,10 +341,22 @@ document.addEventListener('DOMContentLoaded', () => {
         <footer>
             <div class="row">
                 <div class="col-12">
-                    <p>&copy; <span id="year">2024</span> <em>AlgoVerse Academy. All rights reserved.</em></p>
+                    <p>&copy; <span id="year-month"></span> <em>AlgoVerse Academy. All rights reserved.</em></p>
                 </div>
             </div>
         </footer>
+        
+        <script>
+            // Get current date
+            const currentDate = new Date();
+            
+            // Get the current month and year
+            const currentMonth = currentDate.toLocaleString('default', { month: 'long' });  // Get full month name
+            const currentYear = currentDate.getFullYear();
+            
+            // Display the month and year in the footer
+            document.getElementById('year-month').textContent = `${currentMonth} ${currentYear}`;
+        </script>
         <script>
             const canvas = document.getElementById('backgroundCanvas');
             const ctx = canvas.getContext('2d');

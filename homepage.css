@@ -73,8 +73,9 @@ ul {
 .links li {
     margin-left: 35px;
 }
-.links li #homepage{
-    color:blue;
+.links li a.active {
+    color: blue; /* White text for the active link */
+     
 }
 
 
@@ -661,7 +662,7 @@ blockquote {
 
 .flexible-learning{
     background: #FFF1DB;
-    padding:400px; /* Add space inside the section */
+    padding:600px; /* Add space inside the section */
     margin: 0; /* Ensure no outside gaps */
     text-align: center;
     align-items: center;
@@ -747,7 +748,7 @@ blockquote {
 
 .flexible-content #quote{
    position:absolute;
-   bottom:50px;
+   bottom:500px;
    right:50px;
 }
 
@@ -767,11 +768,89 @@ blockquote {
 }
 /* Initial state for animations */
 .projects-main,.projects, .calculator-project, .todo-list-project, .weather-project,
-.flexible-learning, .flexible-title h2, .flexible-title p, .flexible-options li,#flexible-image,#quote {
+.flexible-learning, .flexible-title h2, .flexible-title p, .flexible-options li,#flexible-image,#quote,.form-div,.form-div h3,.form-div h4,.form-div input,.form-div #submit-input {
     opacity: 0; /* Hidden initially */
     transform: translateY(20px); /* Start with a slight downward offset */
     transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth animation */
 }
+
+.form-div {
+    position:absolute;
+    bottom:40px;
+    left:550px;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    width:400px;
+    min-height:60px;
+    box-shadow: 1px 1px 7px;
+    transition: 0.3s ease box-shadow;
+    padding: 20px;
+    margin: 40px 0;
+}
+.form-div:hover{
+    box-shadow: 1px 1px 7px #0D92F4;
+}
+
+.form-div h4{
+    text-align: left;
+}
+
+
+.form-div input{
+    margin-right:100px;
+    width: 300px;
+    min-height: 30px;
+    border-radius: 7px;
+    border: 2px solid black;
+}
+.form-div input:focus {
+    outline: 2px solid blue; /* Adds an outline when the input is focused */
+}
+
+.form-div textarea:focus {
+    border: 2px solid red;
+}
+
+.form-div #submit-input {
+    display: block;
+    margin: auto;
+    padding: 9px 9px;
+    width:70px;
+    height:40px;
+    color: darkblue;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 2px solid black;
+    background-color: #0D92F4;
+    transition: 0.3s ease background-color;
+    margin-top: 25px;
+}
+
+.form-div #submit-input:hover {
+    cursor: pointer;
+    background-color: #4CC9FE;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 footer{

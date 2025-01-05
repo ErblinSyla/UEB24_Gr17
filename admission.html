@@ -349,7 +349,9 @@
                                 <p>Credit Card</p>
                             </div>
                             <img class="pay-img" src="images/credit-cards.png" alt="credit-cards">
-                            <button>See More</button>
+                            <a href="files/credit-card-payment.pdf" download="CreditCardInfo">
+                                <button>See More</button>
+                            </a>
                         </div>
                     </div>
                     <div class="col-3 reveal">
@@ -358,7 +360,9 @@
                                 <p>Digital Wallets</p>
                             </div>
                             <img class="pay-img" src="images/digital-wallets.jpg" alt="digital-wallets">
-                            <button>See More</button>
+                            <a href="files/digital-wallet-payment.pdf" download="DigitalWalletInfo">
+                                <button>See More</button>
+                            </a>
                         </div>
                     </div>
                     <div class="col-3 reveal">
@@ -367,7 +371,9 @@
                                 <p>Cash-On Delivery</p>
                             </div>
                             <img class="pay-img" src="images/cash-on.webp" alt="cash-on">
-                            <button>See More</button>
+                            <a href="files/cash-on-delivery-payment.pdf" download="CashOnDeliveryInfo">
+                                <button>See More</button>
+                            </a>
                         </div>
                     </div>
                     <div class="col-3 reveal">
@@ -376,7 +382,9 @@
                                 <p>Bank Transfers</p>
                             </div>
                             <img class="pay-img" src="images/bank-transfer.png" alt="bank-transfer">
-                            <button>See More</button>
+                            <a href="files/bank-transfers-payment.pdf" download="BankTransferInfo">
+                                <button>See More</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -542,10 +550,22 @@
         <footer>
             <div class="row">
                 <div class="col-12">
-                    <p>&copy; <span id="year">2024</span> <em>AlgoVerse Academy. All rights reserved.</em></p>
+                    <p>&copy; <span id="year-month"></span> <em>AlgoVerse Academy. All rights reserved.</em></p>
                 </div>
             </div>
         </footer>
+        
+        <script>
+            // Get current date
+            const currentDate = new Date();
+            
+            // Get the current month and year
+            const currentMonth = currentDate.toLocaleString('default', { month: 'long' });  // Get full month name
+            const currentYear = currentDate.getFullYear();
+            
+            // Display the month and year in the footer
+            document.getElementById('year-month').textContent = `${currentMonth} ${currentYear}`;
+        </script>
         <script>
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('nav-links');

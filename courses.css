@@ -101,8 +101,9 @@ ul {
 .links li {
     margin-left: 35px;
 }
-.links li #courses {
-    color:blue;
+.links li a.active {
+    color: blue; /* White text for the active link */
+     
 }
 .links li a {
     text-decoration: none;
@@ -326,6 +327,39 @@ footer {
 .apply-modal-content button:hover {
     background-color: #0950b7;
 }
+/* Styling the drag-and-drop area */
+.drag-drop-area {
+    border: 2px dashed #0D92F4;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .drag-drop-area p {
+    margin: 0;
+  }
+  
+  .drag-drop-area:hover {
+    background-color: #e0f7ff;
+  }
+  
+  /* Styling the file input (hidden but accessible) */
+  #file-upload {
+    display: none; /* Hide the input element */
+  }
+  
+  #file-upload:focus {
+    outline: none; /* Remove outline when focused */
+  }
+  
+
+
+
+
+
 
 /* Close Button */
 .close-btn {
