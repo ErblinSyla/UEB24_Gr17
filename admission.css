@@ -47,9 +47,9 @@ nav {
     padding: 10px 20px;
 }
 #logo {
-    width: 60px;  /* Adjust the width as per your preference */
-    height: 56px; /* Adjust the height accordingly */
-    object-fit: contain; /* Ensures the aspect ratio of the logo remains intact */
+    width: 60px;
+    height: 56px;
+    object-fit: contain;
     margin-top:2px;
 }
 .title h2 {
