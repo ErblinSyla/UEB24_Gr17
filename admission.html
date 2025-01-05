@@ -85,7 +85,7 @@
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="courses.html">Our Courses</a></li>
                         <li><a id="admission" href="admission.html">Admissions</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                     <div class="hamburger" id="hamburger">
                         <p>&#9776;</p>
@@ -97,7 +97,7 @@
         <audio id="nav-click-audio" src="audio/shift-page.mp3"></audio>
 
 
-        <script> // Function to play audio on hover
+        <script>
             function addHoverAudioEffectToLinks(linkSelector, audioId) {
                 const links = document.querySelectorAll(linkSelector);
                 const audio = document.getElementById(audioId);
@@ -105,7 +105,7 @@
                 if (audio) {
                     links.forEach(link => {
                         link.addEventListener('mouseenter', () => {
-                            audio.currentTime = 0; // Restart the audio from the beginning
+                            audio.currentTime = 0;
                             audio.play().catch(error => {
                                 console.error('Audio playback failed:', error);
                             });
@@ -115,8 +115,7 @@
                     console.error(`Audio element not found: ${audioId}`);
                 }
             }
-        
-            // Wait for the DOM to load and then attach the hover effect
+
             document.addEventListener('DOMContentLoaded', () => {
                 addHoverAudioEffectToLinks('.links a', 'nav-hover-audio');
             });
@@ -129,13 +128,12 @@
     if (audio) {
         links.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default link action temporarily
-                audio.currentTime = 0; // Restart the audio from the beginning
+                event.preventDefault();
+                audio.currentTime = 0;
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
 
-                // Navigate after audio is played
                 audio.onended = () => {
                     window.location.href = link.href;
                 };
@@ -146,7 +144,6 @@
     }
 }
 
-    // Wait for the DOM to load and then attach the click effect
     document.addEventListener('DOMContentLoaded', () => {
         addClickAudioEffectToLinks('.links a', 'nav-click-audio');
     });
@@ -171,19 +168,17 @@
             </section>
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
-    const enrollLink = document.querySelector(".wall-button a");  // Select the Enroll Now link
-    const enrollAudio = document.getElementById("enroll-click-audio");  // Select the audio element
+    const enrollLink = document.querySelector(".wall-button a");
+    const enrollAudio = document.getElementById("enroll-click-audio");
 
-    // Add click event listener to play audio on click
     enrollLink.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default behavior (smooth scroll or link navigation)
+        event.preventDefault();
 
-        enrollAudio.currentTime = 0;  // Restart the audio from the beginning
+        enrollAudio.currentTime = 0;
         enrollAudio.play().catch(error => {
             console.error('Audio playback failed:', error);
         });
 
-        // After audio finishes playing, navigate to the section (you can replace '#enroll-id' with any section)
         enrollAudio.onended = function () {
             window.location.href = "#enroll-id";
         };
@@ -227,13 +222,12 @@
             <audio id="hover-audio" src="audio/div-hover.mp3"></audio>
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
-    const joinCols = document.querySelectorAll(".join-col");  // Select all the divs with class 'join-col'
-    const hoverAudio = document.getElementById("hover-audio");  // Select the hover audio element
+    const joinCols = document.querySelectorAll(".join-col");
+    const hoverAudio = document.getElementById("hover-audio");
 
-    // Add hover event listeners to each 'join-col' div
     joinCols.forEach(function (col) {
         col.addEventListener("mouseenter", function () {
-            hoverAudio.currentTime = 0;  // Restart the audio from the beginning
+            hoverAudio.currentTime = 0;
             hoverAudio.play().catch(error => {
                 console.error('Audio playback failed:', error);
             });
@@ -265,12 +259,11 @@
             </section>
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
-    const enrollImage = document.querySelector(".enroll-img");  // Select the image element
-    const hoverAudio = document.getElementById("image-hover-audio");  // Select the hover audio element
+    const enrollImage = document.querySelector(".enroll-img");
+    const hoverAudio = document.getElementById("image-hover-audio"); 
 
-    // Add hover event listener to the image
     enrollImage.addEventListener("mouseenter", function () {
-        hoverAudio.currentTime = 0;  // Restart the audio from the beginning
+        hoverAudio.currentTime = 0;
         hoverAudio.play().catch(error => {
             console.error('Audio playback failed:', error);
         });
@@ -329,13 +322,12 @@
             </section>
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
-    const tableCells = document.querySelectorAll(".pricing-plans table td"); // Select all <td> elements in the table
-    const hoverAudio = document.getElementById("td-hover-audio"); // Get the audio element
+    const tableCells = document.querySelectorAll(".pricing-plans table td");
+    const hoverAudio = document.getElementById("td-hover-audio");
 
-    // Add event listeners for each <td> element
     tableCells.forEach(td => {
         td.addEventListener("mouseenter", function () {
-            hoverAudio.currentTime = 0; // Restart audio
+            hoverAudio.currentTime = 0;
             hoverAudio.play().catch(error => {
                 console.error("Audio playback failed:", error);
             });
@@ -394,27 +386,25 @@
             </section>
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
-    const paymentImages = document.querySelectorAll(".pay-img"); // Select all pay-img elements
-    const paymentButtons = document.querySelectorAll(".payment-col button"); // Select all buttons
+    const paymentImages = document.querySelectorAll(".pay-img");
+    const paymentButtons = document.querySelectorAll(".payment-col button");
 
-    const hoverAudio = document.getElementById("hover-audio"); // Hover audio element
-    const clickAudio = document.getElementById("click-audio"); // Click audio element
+    const hoverAudio = document.getElementById("hover-audio");
+    const clickAudio = document.getElementById("click-audio");
 
     const playAudio = (audioElement) => {
-        audioElement.currentTime = 0; // Restart audio
+        audioElement.currentTime = 0;
         audioElement.play().catch(error => {
             console.error("Audio playback failed:", error);
         });
     };
 
-    // Play hover audio when hovering over images
     paymentImages.forEach(image => {
         image.addEventListener("mouseenter", function () {
             playAudio(hoverAudio);
         });
     });
 
-    // Play click audio when clicking buttons
     paymentButtons.forEach(button => {
         button.addEventListener("click", function () {
             playAudio(clickAudio);

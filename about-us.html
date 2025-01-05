@@ -59,7 +59,7 @@
                         <li><a id="about" href="about-us.html">About Us</a></li>
                         <li><a href="courses.html">Our Courses</a></li>
                         <li><a href="admission.html">Admissions</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                     <div class="hamburger" id="hamburger">
                         <p>&#9776;</p>
@@ -71,7 +71,7 @@
         <audio id="nav-click-audio" src="audio/shift-page.mp3"></audio>
 
 
-        <script> // Function to play audio on hover
+        <script>
             function addHoverAudioEffectToLinks(linkSelector, audioId) {
                 const links = document.querySelectorAll(linkSelector);
                 const audio = document.getElementById(audioId);
@@ -79,7 +79,7 @@
                 if (audio) {
                     links.forEach(link => {
                         link.addEventListener('mouseenter', () => {
-                            audio.currentTime = 0; // Restart the audio from the beginning
+                            audio.currentTime = 0;
                             audio.play().catch(error => {
                                 console.error('Audio playback failed:', error);
                             });
@@ -90,7 +90,6 @@
                 }
             }
         
-            // Wait for the DOM to load and then attach the hover effect
             document.addEventListener('DOMContentLoaded', () => {
                 addHoverAudioEffectToLinks('.links a', 'nav-hover-audio');
             });
@@ -103,13 +102,12 @@
     if (audio) {
         links.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default link action temporarily
-                audio.currentTime = 0; // Restart the audio from the beginning
+                event.preventDefault();
+                audio.currentTime = 0;
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
 
-                // Navigate after audio is played
                 audio.onended = () => {
                     window.location.href = link.href;
                 };
@@ -120,7 +118,6 @@
     }
 }
 
-    // Wait for the DOM to load and then attach the click effect
     document.addEventListener('DOMContentLoaded', () => {
         addClickAudioEffectToLinks('.links a', 'nav-click-audio');
     });
@@ -218,14 +215,13 @@
                     </div>
                 </div>
                 <script>
-                    // Function to play audio on hover over iframe
                 function addHoverAudioToIframe(iframeSelector, audioId) {
                 const iframe = document.querySelector(iframeSelector);
                 const audio = document.getElementById(audioId);
 
                  if (iframe && audio) {
                      iframe.addEventListener('mouseenter', () => {
-                    audio.currentTime = 0; // Restart the audio from the beginning
+                    audio.currentTime = 0;
                     audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                     });
@@ -235,7 +231,6 @@
                 }
             }
 
-                // Wait for the DOM to load and then attach the hover effect
                 document.addEventListener('DOMContentLoaded', () => {
                 addHoverAudioToIframe('iframe', 'iframe-hover-audio');
                 });
@@ -309,7 +304,7 @@
     if (audio) {
         cells.forEach(cell => {
             cell.addEventListener('mouseenter', () => {
-                audio.currentTime = 0; // Restart the audio from the beginning
+                audio.currentTime = 0;
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
@@ -320,7 +315,6 @@
     }
 }
 
-// Wait for the DOM to load and then attach the hover effect to table cells
 document.addEventListener('DOMContentLoaded', () => {
     addHoverAudioToTableCells('td', 'td-hover-audio');
 });

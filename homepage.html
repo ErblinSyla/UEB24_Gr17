@@ -68,7 +68,7 @@
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="courses.html">Our Courses</a></li>
                         <li><a href="admission.html">Admissions</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                     <div class="hamburger" id="hamburger">
                         <p>&#9776;</p>
@@ -80,7 +80,7 @@
         <audio id="nav-click-audio" src="audio/shift-page.mp3"></audio>
 
 
-        <script> // Function to play audio on hover
+        <script>
             function addHoverAudioEffectToLinks(linkSelector, audioId) {
                 const links = document.querySelectorAll(linkSelector);
                 const audio = document.getElementById(audioId);
@@ -88,7 +88,7 @@
                 if (audio) {
                     links.forEach(link => {
                         link.addEventListener('mouseenter', () => {
-                            audio.currentTime = 0; // Restart the audio from the beginning
+                            audio.currentTime = 0;
                             audio.play().catch(error => {
                                 console.error('Audio playback failed:', error);
                             });
@@ -98,8 +98,7 @@
                     console.error(`Audio element not found: ${audioId}`);
                 }
             }
-        
-            // Wait for the DOM to load and then attach the hover effect
+
             document.addEventListener('DOMContentLoaded', () => {
                 addHoverAudioEffectToLinks('.links a', 'nav-hover-audio');
             });
@@ -112,13 +111,12 @@
     if (audio) {
         links.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default link action temporarily
-                audio.currentTime = 0; // Restart the audio from the beginning
+                event.preventDefault();
+                audio.currentTime = 0;
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
 
-                // Navigate after audio is played
                 audio.onended = () => {
                     window.location.href = link.href;
                 };
@@ -129,7 +127,6 @@
     }
 }
 
-    // Wait for the DOM to load and then attach the click effect
     document.addEventListener('DOMContentLoaded', () => {
         addClickAudioEffectToLinks('.links a', 'nav-click-audio');
     });
@@ -175,13 +172,12 @@
     if (audio) {
         links.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default link action temporarily
-                audio.currentTime = 0; // Restart the audio from the beginning
+                event.preventDefault(); 
+                audio.currentTime = 0; 
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
 
-                // Navigate after audio is played
                 audio.onended = () => {
                     window.location.href = link.href;
                 };
@@ -192,7 +188,6 @@
     }
 }
 
-// Wait for the DOM to load and then attach the click effect for the admission link
 document.addEventListener('DOMContentLoaded', () => {
     addClickAudioEffectToLinks('.cta-button', 'admission-click-audio');
 });
@@ -320,14 +315,13 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
     </main>
     <script>
-        // Function to play audio on hover
 function addHoverAudioEffect(instructorSelector, audioId) {
 const instructor = document.querySelector(instructorSelector);
 const audio = document.getElementById(audioId);
 
 if (instructor && audio) {
 instructor.addEventListener('mouseenter', () => {
-    audio.currentTime = 0; // Restart the audio
+    audio.currentTime = 0;
     audio.play().catch(error => {
         console.error('Audio playback failed:', error);
     });
@@ -337,7 +331,6 @@ console.error(`Element not found: ${instructorSelector} or ${audioId}`);
 }
 }
 
-// Attach hover effects
 addHoverAudioEffect('.instructor-1', 'audio1');
 addHoverAudioEffect('.instructor-2', 'audio2');
 addHoverAudioEffect('.instructor-3', 'audio3');
@@ -354,7 +347,7 @@ function addHoverAudioEffect(elementSelector, audioId) {
 
         if (element && audio) {
             element.addEventListener('mouseenter', () => {
-                audio.currentTime = 0; // Restart the audio
+                audio.currentTime = 0;
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
@@ -364,9 +357,7 @@ function addHoverAudioEffect(elementSelector, audioId) {
         }
     }
 
-    // Wait for the DOM to load
     document.addEventListener('DOMContentLoaded', () => {
-        // Add hover audio effects for the project divs
         addHoverAudioEffect('.calculator-project', 'audio4');
         addHoverAudioEffect('.todo-list-project', 'audio5');
         addHoverAudioEffect('.weather-project', 'audio1');
@@ -386,7 +377,7 @@ function addHoverAudioEffect(elementSelector, audioId) {
 
         if (element && audio) {
             element.addEventListener('mouseenter', () => {
-                audio.currentTime = 0; // Restart audio
+                audio.currentTime = 0;
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
@@ -396,7 +387,7 @@ function addHoverAudioEffect(elementSelector, audioId) {
         }
     }
 
-    // Wait for the DOM to load
+
     document.addEventListener('DOMContentLoaded', () => {
         addHoverAudioEffect('#flexible-image', 'audio-flexible');
     });

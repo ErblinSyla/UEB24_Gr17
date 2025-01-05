@@ -36,7 +36,7 @@
                   <li><a href="about-us.html">About Us</a></li>
                   <li><a id="courses" href="courses.html">Our Courses</a></li>
                   <li><a href="admission.html">Admissions</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="contact.html">Contact</a></li>
               </ul>
               <div class="hamburger" id="hamburger">
                   <p>&#9776;</p>
@@ -178,7 +178,7 @@
     if (audio) {
         cards.forEach(card => {
             card.addEventListener('mouseenter', () => {
-                audio.currentTime = 0; // Restart the audio from the beginning
+                audio.currentTime = 0;
                 audio.play().catch(error => {
                     console.error('Audio playback failed:', error);
                 });
@@ -189,7 +189,6 @@
     }
 }
 
-// Wait for the DOM to load and then attach the hover effect to course cards
 document.addEventListener('DOMContentLoaded', () => {
     addHoverAudioToCourseCards('.card', 'card-hover-audio');
 });
@@ -207,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (button && audio) {
         button.addEventListener('click', () => {
-            audio.currentTime = 0; // Restart the audio from the beginning
+            audio.currentTime = 0;
             audio.play().catch(error => {
                 console.error('Audio playback failed:', error);
             });
@@ -217,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }
 
-// Wait for the DOM to load and then attach the click effect to the Apply button
 document.addEventListener('DOMContentLoaded', () => {
     addClickAudioToButton('#applyButton', 'button-click-audio');
 });
@@ -273,28 +271,23 @@ document.addEventListener('DOMContentLoaded', () => {
     applyForm.onsubmit = function (event) {
         event.preventDefault();
         
-        // Get form elements
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const course = document.getElementById("course").value;
-        
-        // Audio elements
+   
         const successAudio = document.getElementById("success-audio");
         const failureAudio = document.getElementById("failure-audio");
         
-        // Check if all required fields are filled out
         if (name && email && course) {
-            // If valid, play success audio
-            successAudio.currentTime = 0; // Restart audio
+            successAudio.currentTime = 0;
             successAudio.play().catch(error => {
                 console.error('Audio playback failed:', error);
             });
 
             alert("Application submitted successfully!");
-            modal.style.display = "none"; // Close the modal after submission
+            modal.style.display = "none";
         } else {
-            // If any field is missing, play failure audio
-            failureAudio.currentTime = 0; // Restart audio
+            failureAudio.currentTime = 0;
             failureAudio.play().catch(error => {
                 console.error('Audio playback failed:', error);
             });
